@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "find-areas"
+version = "0.1.0"
+description = "Identify potential data center sites in German industrial areas"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31",
+    "openai>=1.0",
+    "PyYAML>=6.0",
+    "numpy>=1.24",
+    "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+dev = [
+    "hypothesis>=6.0",
+    "pytest>=7.0",
+]

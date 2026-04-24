@@ -26,11 +26,20 @@ class FilterConfig:
 
 
 @dataclass
+class PipelineConfig:
+    """Configuration for pipeline execution behaviour."""
+
+    max_locations: int = 100
+    llm_workers: int = 4
+
+
+@dataclass
 class AppConfig:
     """Top-level application configuration."""
 
     filter: FilterConfig = field(default_factory=FilterConfig)
     llm: LLMConfig = field(default_factory=LLMConfig)
+    pipeline: PipelineConfig = field(default_factory=PipelineConfig)
 
 
 @dataclass

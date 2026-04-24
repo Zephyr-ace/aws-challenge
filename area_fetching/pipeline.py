@@ -3,6 +3,11 @@
 from __future__ import annotations
 
 import logging
+import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from math import cos, radians
+
+import numpy as np
 
 from area_fetching.config import load_config
 from area_fetching.enricher import MetadataEnricher
@@ -10,78 +15,54 @@ from area_fetching.filter_engine import FilterEngine
 from area_fetching.llm_helper import LLMHelper
 from area_fetching.models import AreaResult
 from area_fetching.overpass import OverpassClient
+from area_fetching.progress import ProgressTracker
 from area_fetching.web_research_agent import WebResearchAgent
 
 logger = logging.getLogger("find_areas")
 
 
-def find_areas(config_path: str) -> list[AreaResult]:
-    """Find potential data-centre sites in German industrial areas.
+# ------------------------------------------------------------------
+# Spatial sampling – pick *n* areas spread evenly across Germany
+# ------------------------------------------------------------------
 
-    Pipeline steps:
-    1. Load configuration from *config_path*.
-    2. Query industrial areas from OpenStreetMap via the Overpass API.
-    3. Run LLM-driven web research for each industrial area.
-    4. Optionally query power lines (Criterion B) and water sources
-       (Criterion C).
-    5. Apply distance filters.
-    6. Enrich metadata and return the final result list.
+def _spatially_sample(areas: list[dict], n: int) -> list[dict]:
+    """Select up to *n* areas that are spatially well-distributed.
 
-    Args:
-        config_path: Path to the YAML configuration file.
-
-    Returns:
-        A list of :class:`AreaResult` typed dicts.
+    Uses a greedy farthest-point sampling strategy on an
+    Equirectangular projection so that the selected subset covers
+    Germany as evenly as possible.
     """
-    logger.info("Starting find_areas pipeline...")
+    if len(areas) <= n:
+        return list(areas)
 
-    # 1. Load configuration
-    config = load_config(config_path)
+    # Build projected coordinate array (km-scale)
+    coords = np.empty((len(areas), 2), dtype=np.float64)
+    for i, a in enumerate(areas):
+        lat = a["center"]["lat"]
+        lon = a["center"]["lon"]
+        coords[i, 0] = radians(lat) * 6371.0
+        coords[i, 1] = radians(lon) * cos(radians(lat)) * 6371.0
 
-    # 2. Query industrial areas from OSM
-    client = OverpassClient()
-    industrial_areas = client.query_industrial_areas()
-    logger.info("Found %d industrial areas from OSM", len(industrial_areas))
+    selected_idx: list[int] = []
+    # Seed with the area closest to the centroid of all points
+    centroid = coords.mean(axis=0)
+    dists_to_centroid = np.sum((coords - centroid) ** 2, axis=1)
+    first = int(np.argmin(dists_to_centroid))
+    selected_idx.append(first)
 
-    # 3. Web research for each industrial area
-    llm = LLMHelper(config.llm)
-    agent = WebResearchAgent(llm)
+    # min_dist[i] = distance from point i to the nearest selected point
+    min_dist = np.sum((coords - coords[first]) ** 2, axis=1)
 
-    logger.info("Starting web research for %d areas...", len(industrial_areas))
-    for area in industrial_areas:
-        result = agent.research_area(
-            lat=area["center"]["lat"],
-            lon=area["center"]["lon"],
-            osm_tags=area.get("tags"),
-        )
-        area["web_research"] = result
-    logger.info("Web research complete")
+    for _ in range(n - 1):
+        # Pick the point farthest from any already-selected point
+        next_idx = int(np.argmax(min_dist))
+        selected_idx.append(next_idx)
+        # Update min distances
+        new_dists = np.sum((coords - coords[next_idx]) ** 2, axis=1)
+        min_dist = np.minimum(min_dist, new_dists)
 
-    # 4. Optionally query infrastructure data
-    power_lines: list[dict] | None = None
-    water_sources: list[dict] | None = None
-    substations: list[dict] | None = None
-
-    if config.filter.proximity_power_line_enabled:
-        logger.info("Querying power lines...")
-        power_lines = client.query_power_lines()
-
-    if config.filter.proximity_water_source_enabled:
-        logger.info("Querying water sources...")
-        water_sources = client.query_water_sources()
-
-    if config.filter.proximity_substation_enabled:
-        logger.info("Querying transmission substations...")
-        substations = client.query_substations()
-        logger.info("Found %d transmission substations", len(substations))
-
-    # 5. Apply filters
-    engine = FilterEngine(config.filter)
-    filtered = engine.apply_filters(industrial_areas, power_lines, water_sources, substations)
-
-    # 6. Enrich metadata
-    enricher = MetadataEnricher()
-    results = enricher.enrich(filtered, power_lines, water_sources, config.filter)
-
-    logger.info("Pipeline complete: %d results", len(results))
-    return results
+    logger.info(
+        "Spatial sampling: selected %d of %d areas",
+        len(selected_idx), len(areas),
+    )
+    return [areas[i] for i in selected_idx]

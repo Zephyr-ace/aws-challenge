@@ -13,3 +13,7 @@ filter:
   proximity_substation:
     enabled: true
     max_distance_km: 30.0
+
+pipeline:
+  max_locations: 100
+  llm_workers: 4

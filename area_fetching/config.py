@@ -9,7 +9,7 @@ import re
 import yaml
 
 from area_fetching.exceptions import ConfigError
-from area_fetching.models import AppConfig, FilterConfig, LLMConfig
+from area_fetching.models import AppConfig, FilterConfig, LLMConfig, PipelineConfig
 
 logger = logging.getLogger("find_areas")
 
@@ -115,7 +115,18 @@ def load_config(config_path: str) -> AppConfig:
     _validate_llm(llm_config)
     _validate_filter(filter_config)
 
-    config = AppConfig(filter=filter_config, llm=llm_config)
+    # --- build PipelineConfig ------------------------------------------------
+    pipeline_raw = raw.get("pipeline", {}) or {}
+    pipeline_config = PipelineConfig(
+        max_locations=int(pipeline_raw.get(
+            "max_locations", PipelineConfig.max_locations
+        )),
+        llm_workers=int(pipeline_raw.get(
+            "llm_workers", PipelineConfig.llm_workers
+        )),
+    )
+
+    config = AppConfig(filter=filter_config, llm=llm_config, pipeline=pipeline_config)
 
     # --- logging -------------------------------------------------------------
     logger.info("Configuration loaded from %s", config_path)
@@ -131,6 +142,11 @@ def load_config(config_path: str) -> AppConfig:
         config.filter.max_distance_substation_km,
     )
     logger.info("LLM settings – base_url=%s, model=%s", config.llm.base_url, config.llm.model)
+    logger.info(
+        "Pipeline settings – max_locations=%d, llm_workers=%d",
+        config.pipeline.max_locations,
+        config.pipeline.llm_workers,
+    )
 
     return config
 

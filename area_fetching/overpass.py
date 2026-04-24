@@ -1,10 +1,14 @@
-"""Overpass API client for querying OpenStreetMap data."""
+"""Overpass API client with bbox-chunked queries and disk caching."""
 
 from __future__ import annotations
 
+import hashlib
+import json
 import logging
-
+import os
 import time
+from pathlib import Path
+from typing import Callable
 
 import requests
 
@@ -19,160 +23,156 @@ OVERPASS_ENDPOINTS = [
     "https://z.overpass-api.de/api/interpreter",
 ]
 
+# Germany approximate bounding box
+_DE_SOUTH = 47.27
+_DE_NORTH = 55.06
+_DE_WEST = 5.87
+_DE_EAST = 15.04
+
+# Default cache directory
+_CACHE_DIR = Path(".overpass_cache")
+
 
 class OverpassClient:
     """Client for the OpenStreetMap Overpass API.
 
-    Provides methods to query industrial areas, power lines, and water
-    sources within Germany.  All queries use a 180-second server-side
-    timeout and communicate via JSON.
+    Supports splitting large Germany-wide queries into smaller
+    bounding-box chunks that are individually cached to disk as JSON.
     """
 
-    def __init__(self, url: str | None = None) -> None:
+    def __init__(
+        self,
+        url: str | None = None,
+        cache_dir: str | Path = _CACHE_DIR,
+        cache_enabled: bool = True,
+    ) -> None:
         self.url = url or OVERPASS_ENDPOINTS[0]
+        self._cache_dir = Path(cache_dir)
+        self._cache_enabled = cache_enabled
         self._session = requests.Session()
         self._session.headers.update({
-            "User-Agent": "DataCenterSiteFinder/1.0 (https://github.com/datacenter-site-finder)",
+            "User-Agent": "DataCenterSiteFinder/1.0",
             "Accept": "application/json",
         })
+        if self._cache_enabled:
+            self._cache_dir.mkdir(parents=True, exist_ok=True)
 
     # ------------------------------------------------------------------
-    # Internal helpers
+    # Cache helpers
+    # ------------------------------------------------------------------
+
+    def _cache_key(self, query: str) -> str:
+        return hashlib.sha256(query.encode()).hexdigest()[:16]
+
+    def _cache_path(self, key: str) -> Path:
+        return self._cache_dir / f"{key}.json"
+
+    def _load_cache(self, key: str) -> list[dict] | None:
+        path = self._cache_path(key)
+        if not path.exists():
+            return None
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except (json.JSONDecodeError, OSError):
+            return None
+
+    def _save_cache(self, key: str, elements: list[dict]) -> None:
+        try:
+            with open(self._cache_path(key), "w", encoding="utf-8") as f:
+                json.dump(elements, f)
+        except OSError:
+            logger.warning("Failed to write cache file for key %s", key)
+
+    # ------------------------------------------------------------------
+    # Low-level query execution
     # ------------------------------------------------------------------
 
     def _execute_query(self, query: str) -> list[dict]:
-        """Send an Overpass QL query and return the ``elements`` list.
+        """Send an Overpass QL query and return the ``elements`` list."""
+        if self._cache_enabled:
+            key = self._cache_key(query)
+            cached = self._load_cache(key)
+            if cached is not None:
+                logger.debug("Cache hit for query (key=%s, %d elements)", key, len(cached))
+                return cached
 
-        Tries multiple Overpass endpoints with retries on transient errors.
-        """
+        elements = self._execute_query_remote(query)
+
+        if self._cache_enabled:
+            self._save_cache(self._cache_key(query), elements)
+
+        return elements
+
+    def _execute_query_remote(self, query: str) -> list[dict]:
+        """Send query to Overpass servers, trying multiple endpoints."""
         endpoints = [self.url] + [e for e in OVERPASS_ENDPOINTS if e != self.url]
         last_exc: Exception | None = None
 
         for endpoint in endpoints:
-            for attempt in range(1):
-                logger.info("Overpass request: %s (attempt %d)", endpoint, attempt + 1)
-                logger.debug("Overpass query:\n%s", query)
-                try:
-                    response = self._session.post(
-                        endpoint,
-                        data={"data": query},
-                        timeout=200,
-                    )
-                except requests.exceptions.Timeout as exc:
-                    last_exc = OverpassTimeoutError(f"Overpass API request timed out: {exc}")
-                    continue
-                except requests.exceptions.ConnectionError as exc:
-                    last_exc = ConnectionError(f"Failed to connect to Overpass API: {exc}")
-                    continue
+            logger.info("Overpass request: %s", endpoint)
+            logger.debug("Overpass query:\n%s", query)
+            try:
+                response = self._session.post(
+                    endpoint,
+                    data={"data": query},
+                    timeout=200,
+                )
+            except requests.exceptions.Timeout as exc:
+                last_exc = OverpassTimeoutError(f"Overpass API timed out: {exc}")
+                continue
+            except requests.exceptions.ConnectionError as exc:
+                last_exc = ConnectionError(f"Connection failed: {exc}")
+                continue
 
-                if response.status_code == 429:
-                    last_exc = OverpassTimeoutError("Overpass API returned HTTP 429")
-                    time.sleep(5)
-                    continue
+            if response.status_code == 429:
+                last_exc = OverpassTimeoutError("HTTP 429")
+                time.sleep(5)
+                continue
 
-                if response.status_code in (406, 500, 502, 503, 504):
-                    last_exc = requests.exceptions.HTTPError(
-                        f"Overpass returned {response.status_code}", response=response
-                    )
-                    time.sleep(10)
-                    continue
+            if response.status_code in (406, 500, 502, 503, 504):
+                last_exc = requests.exceptions.HTTPError(
+                    f"Overpass returned {response.status_code}",
+                    response=response,
+                )
+                time.sleep(10)
+                continue
 
-                response.raise_for_status()
-                data = response.json()
+            response.raise_for_status()
+            data = response.json()
 
-                remark = data.get("remark", "")
-                if "timeout" in remark.lower():
-                    last_exc = OverpassTimeoutError(f"Overpass API timeout: {remark}")
-                    continue
+            remark = data.get("remark", "")
+            if "timeout" in remark.lower():
+                last_exc = OverpassTimeoutError(f"Server timeout: {remark}")
+                continue
 
-                elements = data.get("elements", [])
-                logger.debug("Overpass response: %d elements, %d bytes", len(elements), len(response.content))
-                return elements
+            elements = data.get("elements", [])
+            logger.debug("Overpass response: %d elements", len(elements))
+            return elements
 
         raise last_exc  # type: ignore[misc]
 
     # ------------------------------------------------------------------
-    # Public query methods
+    # Bbox-chunked queries
     # ------------------------------------------------------------------
 
-    def query_industrial_areas(self) -> list[dict]:
-        """Query all industrial areas in Germany.
+    @staticmethod
+    def _make_bbox_grid(
+        rows: int = 4,
+        cols: int = 3,
+    ) -> list[tuple[float, float, float, float]]:
+        """Split Germany's bounding box into a grid of smaller boxes.
 
-        Returns a list of dicts, each with ``"center"`` (lat/lon),
-        ``"tags"``, ``"type"``, and ``"id"`` keys.
-
-        Overpass query uses ``out center tags`` so that each way/relation
-        is returned with its centroid and tag set.
+        Returns a list of ``(south, west, north, east)`` tuples.
         """
-        query = """\
-[out:json][timeout:180];
-area["ISO3166-1"="DE"][admin_level=2]->.de;
-(
-  way["landuse"="industrial"](area.de);
-  relation["landuse"="industrial"](area.de);
-);
-out center tags;"""
-        elements = self._execute_query(query)
-        return elements
-
-    def query_power_lines(self) -> list[dict]:
-        """Query high-voltage power lines (110 kV / 220 kV / 380 kV) in Germany.
-
-        Returns a list of dicts, each with ``"geometry"`` (list of
-        lat/lon nodes), ``"tags"``, ``"type"``, and ``"id"`` keys.
-
-        Overpass query uses ``out geom`` so that the full node geometry
-        of each way is included in the response.
-        """
-        query = """\
-[out:json][timeout:180];
-area["ISO3166-1"="DE"][admin_level=2]->.de;
-(
-  way["power"="line"]["voltage"~"110000|220000|380000"](area.de);
-);
-out geom;"""
-        elements = self._execute_query(query)
-        return elements
-
-    def query_substations(self) -> list[dict]:
-        """Query high-voltage transmission substations (110 kV+) in Germany.
-
-        Returns a list of dicts, each with ``"center"`` (lat/lon),
-        ``"tags"``, ``"type"``, and ``"id"`` keys.
-
-        Targets substations tagged as ``substation=transmission`` in OSM,
-        which represent the grid nodes relevant for large-consumer
-        connections (data centres, heavy industry).
-        """
-        query = """\
-[out:json][timeout:180];
-area["ISO3166-1"="DE"][admin_level=2]->.de;
-(
-  node["power"="substation"]["substation"="transmission"](area.de);
-  way["power"="substation"]["substation"="transmission"](area.de);
-  relation["power"="substation"]["substation"="transmission"](area.de);
-);
-out center tags;"""
-        elements = self._execute_query(query)
-        return elements
-
-    def query_water_sources(self) -> list[dict]:
-        """Query water sources (rivers, canals, lakes) in Germany.
-
-        Returns a list of dicts, each with ``"center"`` (lat/lon),
-        ``"tags"``, ``"type"``, and ``"id"`` keys.
-
-        Overpass query uses ``out center tags`` so that each element is
-        returned with its centroid and tag set.
-        """
-        query = """\
-[out:json][timeout:180];
-area["ISO3166-1"="DE"][admin_level=2]->.de;
-(
-  way["waterway"~"river|canal"](area.de);
-  way["natural"="water"](area.de);
-  relation["natural"="water"](area.de);
-);
-out center tags;"""
-        elements = self._execute_query(query)
-        return elements
+        lat_step = (_DE_NORTH - _DE_SOUTH) / rows
+        lon_step = (_DE_EAST - _DE_WEST) / cols
+        boxes: list[tuple[float, float, float, float]] = []
+        for r in range(rows):
+            for c in range(cols):
+                s = _DE_SOUTH + r * lat_step
+                n = s + lat_step
+                w = _DE_WEST + c * lon_step
+                e = w + lon_step
+                boxes.append((s, w, n, e))
+        return boxes

@@ -176,3 +176,124 @@ class OverpassClient:
                 e = w + lon_step
                 boxes.append((s, w, n, e))
         return boxes
+
+    def _chunked_query(
+        self,
+        query_builder: Callable[[str], str],
+        label: str,
+        rows: int = 4,
+        cols: int = 3,
+        progress_cb: Callable[[int], None] | None = None,
+    ) -> list[dict]:
+        """Run a query across bbox chunks, dedup by element id, and merge.
+
+        Args:
+            query_builder: Callable that takes a bbox string
+                ``"(south,west,north,east)"`` and returns a full
+                Overpass QL query.
+            label: Human-readable label for logging.
+            rows: Number of latitude divisions.
+            cols: Number of longitude divisions.
+            progress_cb: Optional callback invoked after each chunk
+                completes, with the number of new elements as argument.
+
+        Returns:
+            Deduplicated list of elements from all chunks.
+        """
+        boxes = self._make_bbox_grid(rows, cols)
+        seen_ids: set[int] = set()
+        all_elements: list[dict] = []
+
+        for i, (s, w, n, e) in enumerate(boxes):
+            bbox = f"({s},{w},{n},{e})"
+            query = query_builder(bbox)
+            logger.info("%s chunk %d/%d  bbox=%s", label, i + 1, len(boxes), bbox)
+
+            try:
+                elements = self._execute_query(query)
+            except Exception:
+                logger.warning("%s chunk %d failed, skipping", label, i + 1)
+                elements = []
+
+            new = 0
+            for el in elements:
+                eid = el.get("id")
+                if eid and eid not in seen_ids:
+                    seen_ids.add(eid)
+                    all_elements.append(el)
+                    new += 1
+
+            if progress_cb:
+                progress_cb(1)
+
+        logger.info("%s: %d total elements from %d chunks", label, len(all_elements), len(boxes))
+        return all_elements
+
+    # ------------------------------------------------------------------
+    # Public query methods (chunked)
+    # ------------------------------------------------------------------
+
+    def query_industrial_areas(
+        self,
+        progress_cb: Callable[[int], None] | None = None,
+    ) -> list[dict]:
+        """Query industrial areas in Germany using bbox chunks."""
+        def build(bbox: str) -> str:
+            return (
+                f"[out:json][timeout:90];\n"
+                f"(\n"
+                f"  way[\"landuse\"=\"industrial\"]{bbox};\n"
+                f"  relation[\"landuse\"=\"industrial\"]{bbox};\n"
+                f");\n"
+                f"out center tags;"
+            )
+        return self._chunked_query(build, "Industrial areas", progress_cb=progress_cb)
+
+    def query_power_lines(
+        self,
+        progress_cb: Callable[[int], None] | None = None,
+    ) -> list[dict]:
+        """Query high-voltage power lines in Germany using bbox chunks."""
+        def build(bbox: str) -> str:
+            return (
+                f"[out:json][timeout:90];\n"
+                f"(\n"
+                f"  way[\"power\"=\"line\"][\"voltage\"~\"110000|220000|380000\"]{bbox};\n"
+                f");\n"
+                f"out geom;"
+            )
+        return self._chunked_query(build, "Power lines", progress_cb=progress_cb)
+
+    def query_substations(
+        self,
+        progress_cb: Callable[[int], None] | None = None,
+    ) -> list[dict]:
+        """Query transmission substations in Germany using bbox chunks."""
+        def build(bbox: str) -> str:
+            return (
+                f"[out:json][timeout:90];\n"
+                f"(\n"
+                f"  node[\"power\"=\"substation\"][\"substation\"=\"transmission\"]{bbox};\n"
+                f"  way[\"power\"=\"substation\"][\"substation\"=\"transmission\"]{bbox};\n"
+                f"  relation[\"power\"=\"substation\"][\"substation\"=\"transmission\"]{bbox};\n"
+                f");\n"
+                f"out center tags;"
+            )
+        return self._chunked_query(build, "Substations", progress_cb=progress_cb)
+
+    def query_water_sources(
+        self,
+        progress_cb: Callable[[int], None] | None = None,
+    ) -> list[dict]:
+        """Query water sources in Germany using bbox chunks."""
+        def build(bbox: str) -> str:
+            return (
+                f"[out:json][timeout:90];\n"
+                f"(\n"
+                f"  way[\"waterway\"~\"river|canal\"]{bbox};\n"
+                f"  way[\"natural\"=\"water\"]{bbox};\n"
+                f"  relation[\"natural\"=\"water\"]{bbox};\n"
+                f");\n"
+                f"out center tags;"
+            )
+        return self._chunked_query(build, "Water sources", progress_cb=progress_cb)

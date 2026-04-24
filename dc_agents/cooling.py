@@ -28,30 +28,21 @@ def compute_cooling_cost(
     effective_cost = base_annual_cost * (1.0 - free_cooling_fraction)
 
     return (
-        f"Cooling cost estimate:\n"
-        f"  Location: ({latitude}, {longitude})\n"
-        f"  Total area: {total_area:,.0f} m²\n"
-        f"  Estimated AI load: {ai_load_mw} MW\n"
-        f"  Base cooling cost: €{base_annual_cost:,.2f}/year\n"
-        f"  Free cooling fraction: {free_cooling_fraction:.0%}\n"
-        f"  cooling_cost: €{effective_cost:,.2f}/year"
+        f"cooling_cost: €{effective_cost:,.2f}/year "
+        f"(load={ai_load_mw}MW, free_cooling={free_cooling_fraction:.0%})"
     )
 
 
 cooling_agent = Agent(
     name="Cooling Agent",
-    model="gpt-5.4-mini",
+    model="gpt-5.4-nano",
     instructions=(
-        "You are a specialist in data center thermal management and cooling economics.\n\n"
-        "Given coordinates (latitude, longitude) and total area in m², you must:\n"
-        "1. Use web search to research the local climate at the given coordinates "
-        "(average temperatures, humidity) to determine free cooling potential.\n"
-        "2. Estimate the fraction of the year where free/economizer cooling can be used.\n"
-        "3. Research typical annual mechanical cooling operational costs per MW of IT load.\n"
-        "4. Call compute_cooling_cost with your researched values.\n\n"
-        "Your final answer MUST include the line:\n"
-        "  cooling_cost: €<amount>/year\n"
-        "where <amount> is the estimated annual operational cooling cost in euros."
+        "Estimate annual cooling cost for a data center. Be very brief.\n"
+        "Assume modern cooling tech with good free cooling utilization where climate allows.\n"
+        "1. Web search local climate at the coordinates for free cooling potential.\n"
+        "2. Estimate free cooling fraction and cooling cost/MW/year.\n"
+        "3. Call compute_cooling_cost with your values.\n"
+        "Final answer MUST include: cooling_cost: €<amount>/year"
     ),
     tools=[
         WebSearchTool(),

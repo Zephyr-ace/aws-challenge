@@ -1,0 +1,183 @@
+[
+  {
+    "latitude": 53.6114471,
+    "longitude": 14.9992307,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 120.0,
+    "capacity_w": 120000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      2382.0,
+      1114.0
+    ],
+    "land_cost_eur": 10000000.0,
+    "infrastructure_cost_eur": 810000000.0,
+    "power_cost_annual_eur": 210240000.0,
+    "cooling_cost_annual_eur": 7200000.0,
+    "total_capital_eur": 820000000.0,
+    "total_annual_opex_eur": 217440000.0
+  },
+  {
+    "latitude": 52.228518,
+    "longitude": 5.9757418,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 120.0,
+    "capacity_w": 120000000.0,
+    "industrial_area_name": "Gemeentewerf Apeldoorn Noord",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000.0,
+      310000.0,
+      320000.0
+    ],
+    "land_cost_eur": 11500000.0,
+    "infrastructure_cost_eur": 570000000.0,
+    "power_cost_annual_eur": 298015200.0,
+    "cooling_cost_annual_eur": 73800000.0,
+    "total_capital_eur": 581500000.0,
+    "total_annual_opex_eur": 371815200.0
+  },
+  {
+    "latitude": 49.3179126,
+    "longitude": 14.1558495,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 120.0,
+    "capacity_w": 120000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 1000000.0,
+    "infrastructure_cost_eur": 17500630.0,
+    "power_cost_annual_eur": 579000960.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 18500630.0,
+    "total_annual_opex_eur": 579000960.0
+  },
+  {
+    "latitude": 50.2140969,
+    "longitude": 11.9306026,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 120.0,
+    "capacity_w": 120000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      7292.0,
+      60000.0,
+      50000.0,
+      16925.0
+    ],
+    "land_cost_eur": 12500000.0,
+    "infrastructure_cost_eur": 372000000.0,
+    "power_cost_annual_eur": 269632800.0,
+    "cooling_cost_annual_eur": 9900000.0,
+    "total_capital_eur": 384500000.0,
+    "total_annual_opex_eur": 279532800.0
+  },
+  {
+    "latitude": 53.544896,
+    "longitude": 8.5914253,
+    "total_area_sqm": 140000.0,
+    "capacity_mw": 336.0,
+    "capacity_w": 336000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      1400000.0,
+      140000.0
+    ],
+    "land_cost_eur": 42000000.0,
+    "infrastructure_cost_eur": 4291000000.0,
+    "power_cost_annual_eur": 699342336.0,
+    "cooling_cost_annual_eur": 10164000.0,
+    "total_capital_eur": 4333000000.0,
+    "total_annual_opex_eur": 709506336.0
+  },
+  {
+    "latitude": 48.0876051,
+    "longitude": 12.0325068,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 48.0,
+    "capacity_w": 48000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 4500000.0,
+    "infrastructure_cost_eur": 539000000.0,
+    "power_cost_annual_eur": 420480000.0,
+    "cooling_cost_annual_eur": 20736000.0,
+    "total_capital_eur": 543500000.0,
+    "total_annual_opex_eur": 441216000.0
+  },
+  {
+    "latitude": 48.6776048,
+    "longitude": 10.8133797,
+    "total_area_sqm": 10000.0,
+    "capacity_mw": 24.0,
+    "capacity_w": 24000000.0,
+    "industrial_area_name": "AGCO Fendt Werk 3",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 6000000.0,
+    "infrastructure_cost_eur": 166000000.0,
+    "power_cost_annual_eur": 56764800.0,
+    "cooling_cost_annual_eur": 3900000.0,
+    "total_capital_eur": 172000000.0,
+    "total_annual_opex_eur": 60664800.0
+  },
+  {
+    "latitude": 49.3185536,
+    "longitude": 14.1621555,
+    "total_area_sqm": 12000.0,
+    "capacity_mw": 28.8,
+    "capacity_w": 28800000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      5025.0,
+      10378.0,
+      20000.0
+    ],
+    "land_cost_eur": 1020000.0,
+    "infrastructure_cost_eur": 134160000.0,
+    "power_cost_annual_eur": 55515974.4,
+    "cooling_cost_annual_eur": 5184000.0,
+    "total_capital_eur": 135180000.0,
+    "total_annual_opex_eur": 60799974.4
+  },
+  {
+    "latitude": 54.0194211,
+    "longitude": 8.8710175,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 120.0,
+    "capacity_w": 120000000.0,
+    "industrial_area_name": "Landstation Dieksand",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      50000.0
+    ],
+    "land_cost_eur": 20000000.0,
+    "infrastructure_cost_eur": 244000000.0,
+    "power_cost_annual_eur": 269632800.0,
+    "cooling_cost_annual_eur": 15750000.0,
+    "total_capital_eur": 264000000.0,
+    "total_annual_opex_eur": 285382800.0
+  },
+  {
+    "latitude": 50.2245969,
+    "longitude": 11.957387,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 120.0,
+    "capacity_w": 120000000.0,
+    "industrial_area_name": "Sandler AG",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 3000000.0,
+    "infrastructure_cost_eur": 621000000.0,
+    "power_cost_annual_eur": 622000296.0,
+    "cooling_cost_annual_eur": 11340000.0,
+    "total_capital_eur": 624000000.0,
+    "total_annual_opex_eur": 633340296.0
+  }
+]

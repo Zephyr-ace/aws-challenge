@@ -1,0 +1,191 @@
+[
+  {
+    "latitude": 48.6265777,
+    "longitude": 9.452343,
+    "total_area_sqm": 20000.0,
+    "capacity_mw": 48.0,
+    "capacity_w": 48000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 18000000.0,
+    "infrastructure_cost_eur": 232400000.0,
+    "power_cost_annual_eur": 78840000.0,
+    "cooling_cost_annual_eur": 6220800.0,
+    "total_capital_eur": 250400000.0,
+    "total_annual_opex_eur": 85060800.0
+  },
+  {
+    "latitude": 47.4682005,
+    "longitude": 12.6236737,
+    "total_area_sqm": 25000.0,
+    "capacity_mw": 60.0,
+    "capacity_w": 60000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 12500000.0,
+    "infrastructure_cost_eur": 370500000.0,
+    "power_cost_annual_eur": 177390000.0,
+    "cooling_cost_annual_eur": 45000000.0,
+    "total_capital_eur": 383000000.0,
+    "total_annual_opex_eur": 222390000.0
+  },
+  {
+    "latitude": 49.6057723,
+    "longitude": 10.9971644,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 120.0,
+    "capacity_w": 120000000.0,
+    "industrial_area_name": "Schlachthof Erlangen",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      6700.0,
+      13000.0
+    ],
+    "land_cost_eur": 15000000.0,
+    "infrastructure_cost_eur": 1735000000.0,
+    "power_cost_annual_eur": 510883200000.0,
+    "cooling_cost_annual_eur": 115200000.0,
+    "total_capital_eur": 1750000000.0,
+    "total_annual_opex_eur": 510998400000.0
+  },
+  {
+    "latitude": 52.3995542,
+    "longitude": 8.4966416,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 120.0,
+    "capacity_w": 120000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      5000.0,
+      10000.0,
+      15000.0,
+      25000.0,
+      50000.0
+    ],
+    "land_cost_eur": 22500000.0,
+    "infrastructure_cost_eur": 676000000.0,
+    "power_cost_annual_eur": 622000296.0,
+    "cooling_cost_annual_eur": 9360000.0,
+    "total_capital_eur": 698500000.0,
+    "total_annual_opex_eur": 631360296.0
+  },
+  {
+    "latitude": 49.3141909,
+    "longitude": 14.1589963,
+    "total_area_sqm": 70000.0,
+    "capacity_mw": 168.0,
+    "capacity_w": 168000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      115000.0,
+      70000.0,
+      200000.0,
+      9985.0
+    ],
+    "land_cost_eur": 5600000.0,
+    "infrastructure_cost_eur": 1213800000.0,
+    "power_cost_annual_eur": 208610640.0,
+    "cooling_cost_annual_eur": 38220000.0,
+    "total_capital_eur": 1219400000.0,
+    "total_annual_opex_eur": 246830640.0
+  },
+  {
+    "latitude": 47.464258,
+    "longitude": 12.6303465,
+    "total_area_sqm": 50000.0,
+    "capacity_mw": 120.0,
+    "capacity_w": 120000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      50000.0
+    ],
+    "land_cost_eur": 14250000.0,
+    "infrastructure_cost_eur": 686000000.0,
+    "power_cost_annual_eur": 283824000.0,
+    "cooling_cost_annual_eur": 27300000.0,
+    "total_capital_eur": 700250000.0,
+    "total_annual_opex_eur": 311124000.0
+  },
+  {
+    "latitude": 48.8208971,
+    "longitude": 9.101645,
+    "total_area_sqm": 6000.0,
+    "capacity_mw": 14.4,
+    "capacity_w": 14400000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      4800.0
+    ],
+    "land_cost_eur": 4800000.0,
+    "infrastructure_cost_eur": 63480000.0,
+    "power_cost_annual_eur": 20435328.0,
+    "cooling_cost_annual_eur": 4665600.0,
+    "total_capital_eur": 68280000.0,
+    "total_annual_opex_eur": 25100928.0
+  },
+  {
+    "latitude": 54.3402316,
+    "longitude": 13.052557,
+    "total_area_sqm": 6500.0,
+    "capacity_mw": 15.6,
+    "capacity_w": 15600000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      5320.0,
+      2760.0,
+      6590.0,
+      12360.0,
+      3650.0
+    ],
+    "land_cost_eur": 2145000.0,
+    "infrastructure_cost_eur": 81510000.0,
+    "power_cost_annual_eur": 27672840.0,
+    "cooling_cost_annual_eur": 5070000.0,
+    "total_capital_eur": 83655000.0,
+    "total_annual_opex_eur": 32742840.0
+  },
+  {
+    "latitude": 49.3160793,
+    "longitude": 14.151975,
+    "total_area_sqm": 200000.0,
+    "capacity_mw": 480.0,
+    "capacity_w": 480000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 30000000.0,
+    "infrastructure_cost_eur": 2836000000.0,
+    "power_cost_annual_eur": 681177600.0,
+    "cooling_cost_annual_eur": 86400000.0,
+    "total_capital_eur": 2866000000.0,
+    "total_annual_opex_eur": 767577600.0
+  },
+  {
+    "latitude": 53.5378818,
+    "longitude": 8.5815057,
+    "total_area_sqm": 30000.0,
+    "capacity_mw": 72.0,
+    "capacity_w": 72000000.0,
+    "industrial_area_name": "WSA Weser-Jade-Nordsee, Tonnenhof",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      23162.0,
+      9353.0,
+      4276.5,
+      2160.0
+    ],
+    "land_cost_eur": 1350000.0,
+    "infrastructure_cost_eur": 371400000.0,
+    "power_cost_annual_eur": 124400059.2,
+    "cooling_cost_annual_eur": 1188000.0,
+    "total_capital_eur": 372750000.0,
+    "total_annual_opex_eur": 125588059.2
+  }
+]

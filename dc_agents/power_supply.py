@@ -27,32 +27,21 @@ def compute_power_cost(
     annual_cost = annual_kwh * electricity_price_per_kwh
 
     return (
-        f"Power supply cost estimate:\n"
-        f"  Location: ({latitude}, {longitude})\n"
-        f"  Total area: {total_area:,.0f} m²\n"
-        f"  Estimated AI load: {ai_load_mw} MW\n"
-        f"  PUE: {pue}\n"
-        f"  Total facility power: {total_power_mw:.2f} MW\n"
-        f"  Electricity price: €{electricity_price_per_kwh:.4f}/kWh\n"
-        f"  Annual consumption: {annual_kwh:,.0f} kWh\n"
-        f"  power_cost: €{annual_cost:,.2f}/year"
+        f"power_cost: €{annual_cost:,.2f}/year "
+        f"(load={ai_load_mw}MW, PUE={pue}, price={electricity_price_per_kwh:.4f}€/kWh)"
     )
 
 
 power_supply_agent = Agent(
     name="Power Supply Agent",
-    model="gpt-5.4-mini",
+    model="gpt-5.4-nano",
     instructions=(
-        "You are a specialist in energy markets and data center power procurement.\n\n"
-        "Given coordinates (latitude, longitude) and total area in m², you must:\n"
-        "1. Use web search to find the current industrial electricity price (EUR/kWh) "
-        "in the region of the given coordinates.\n"
-        "2. Estimate a realistic PUE (Power Usage Effectiveness) for a modern AI data center "
-        "at that location, considering the local climate.\n"
-        "3. Call compute_power_cost with the coordinates, area, electricity price, and PUE.\n\n"
-        "Your final answer MUST include the line:\n"
-        "  power_cost: €<amount>/year\n"
-        "where <amount> is the estimated annual electricity cost in euros."
+        "Estimate annual electricity cost for a data center. Be very brief.\n"
+        "Assume favorable industrial electricity rates and a modern efficient PUE (1.1-1.3 range).\n"
+        "1. Web search industrial electricity price (EUR/kWh) near the coordinates.\n"
+        "2. Estimate PUE for a modern AI DC at that location.\n"
+        "3. Call compute_power_cost with your values.\n"
+        "Final answer MUST include: power_cost: €<amount>/year"
     ),
     tools=[
         WebSearchTool(),

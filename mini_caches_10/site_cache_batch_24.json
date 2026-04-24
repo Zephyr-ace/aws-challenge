@@ -1,0 +1,200 @@
+[
+  {
+    "latitude": 50.1762436,
+    "longitude": 14.2650603,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 3600000.0,
+    "infrastructure_cost_eur": 279600000.0,
+    "grid_connection_cost_eur": 184000000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 283200000.0,
+    "total_annual_opex_eur": 0.0
+  },
+  {
+    "latitude": 53.1795715,
+    "longitude": 6.7249994,
+    "total_area_sqm": 25000,
+    "capacity_mw": 25,
+    "capacity_w": 25000000,
+    "industrial_area_name": "NAM-locatie Kolham-1",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 1375000,
+    "infrastructure_cost_eur": 275500000,
+    "grid_connection_cost_eur": 2200000,
+    "power_cost_annual_eur": 81993600,
+    "cooling_cost_annual_eur": 1023750,
+    "total_capital_eur": 279775000,
+    "total_annual_opex_eur": 83017350
+  },
+  {
+    "latitude": 51.543666,
+    "longitude": 6.8714411,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 2700000.0,
+    "infrastructure_cost_eur": 739500000.0,
+    "grid_connection_cost_eur": 3400000.0,
+    "power_cost_annual_eur": 222066000.0,
+    "cooling_cost_annual_eur": 78000000.0,
+    "total_capital_eur": 743900000.0,
+    "total_annual_opex_eur": 300066000.0
+  },
+  {
+    "latitude": 54.9998479,
+    "longitude": 12.0309069,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 900000.0,
+    "infrastructure_cost_eur": 96960000.0,
+    "grid_connection_cost_eur": 9500000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 64842000.0,
+    "total_capital_eur": 97860000.0,
+    "total_annual_opex_eur": 64842000.0
+  },
+  {
+    "latitude": 48.2345482,
+    "longitude": 10.1068135,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Industriegebiet Nord",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 8700000.0,
+    "infrastructure_cost_eur": 216300000.0,
+    "grid_connection_cost_eur": 4000000.0,
+    "power_cost_annual_eur": 1205000000.0,
+    "cooling_cost_annual_eur": 16302000.0,
+    "total_capital_eur": 230300000.0,
+    "total_annual_opex_eur": 1221302000.0
+  },
+  {
+    "latitude": 50.6193689,
+    "longitude": 9.0263321,
+    "total_area_sqm": 20000.0,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      20000.0
+    ],
+    "land_cost_eur": 1600000.0,
+    "infrastructure_cost_eur": 216400000.0,
+    "grid_connection_cost_eur": 19000000.0,
+    "power_cost_annual_eur": 19721928.0,
+    "cooling_cost_annual_eur": 164775000.0,
+    "total_capital_eur": 233000000.0,
+    "total_annual_opex_eur": 184497928.0
+  },
+  {
+    "latitude": 52.6451155,
+    "longitude": 6.8594033,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000,
+      20000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 4200000.0,
+    "infrastructure_cost_eur": 255300000.0,
+    "grid_connection_cost_eur": 4700000.0,
+    "power_cost_annual_eur": 24427260000.0,
+    "cooling_cost_annual_eur": 2574000.0,
+    "total_capital_eur": 261500000.0,
+    "total_annual_opex_eur": 24429834000.0
+  },
+  {
+    "latitude": 51.1008118,
+    "longitude": 13.674061,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Stadtwerke Elbtal",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      20000,
+      25000,
+      30000
+    ],
+    "land_cost_eur": 10500000,
+    "infrastructure_cost_eur": 268000000,
+    "grid_connection_cost_eur": 5000000,
+    "power_cost_annual_eur": 601286400,
+    "cooling_cost_annual_eur": 16477500,
+    "total_capital_eur": 278000000,
+    "total_annual_opex_eur": 617763900
+  },
+  {
+    "latitude": 53.5696686,
+    "longitude": 14.5550299,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000,
+      20000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 360000.0,
+    "infrastructure_cost_eur": 78600000.0,
+    "grid_connection_cost_eur": 10800000.0,
+    "power_cost_annual_eur": 148044000000.0,
+    "cooling_cost_annual_eur": 17589000.0,
+    "total_capital_eur": 96460000.0,
+    "total_annual_opex_eur": 148061589000.0
+  },
+  {
+    "latitude": 53.3021052,
+    "longitude": 8.0689175,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Kläranlage Spohle",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 3600000,
+    "infrastructure_cost_eur": 394800000,
+    "grid_connection_cost_eur": 3400000,
+    "power_cost_annual_eur": 0,
+    "cooling_cost_annual_eur": 113750000,
+    "total_capital_eur": 403200000,
+    "total_annual_opex_eur": 113750000
+  }
+]

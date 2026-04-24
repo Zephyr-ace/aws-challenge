@@ -1,0 +1,192 @@
+[
+  {
+    "latitude": 49.3617755,
+    "longitude": 11.1737209,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Heinrich Müller Präzisionsdrehteile",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 12000000.0,
+    "infrastructure_cost_eur": 924000000.0,
+    "grid_connection_cost_eur": 6900000.0,
+    "power_cost_annual_eur": 180000000.0,
+    "cooling_cost_annual_eur": 28908000.0,
+    "total_capital_eur": 945900000.0,
+    "total_annual_opex_eur": 208908000.0
+  },
+  {
+    "latitude": 49.4443318,
+    "longitude": 13.0265922,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "FVE",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 900000,
+    "infrastructure_cost_eur": 119700000,
+    "grid_connection_cost_eur": 27500000,
+    "power_cost_annual_eur": 0,
+    "cooling_cost_annual_eur": 10140000,
+    "total_capital_eur": 147600000,
+    "total_annual_opex_eur": 10140000
+  },
+  {
+    "latitude": 53.4480869,
+    "longitude": 6.8531708,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000.0,
+    "industrial_area_name": "Magnum",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000.0
+    ],
+    "land_cost_eur": 5000000.0,
+    "infrastructure_cost_eur": 205000000.0,
+    "grid_connection_cost_eur": 2730000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 58558500.0,
+    "total_capital_eur": 213730000.0,
+    "total_annual_opex_eur": 58558500.0
+  },
+  {
+    "latitude": 53.5002482,
+    "longitude": 14.5995822,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      5000,
+      8000,
+      10000,
+      20000,
+      50000
+    ],
+    "land_cost_eur": 120000,
+    "infrastructure_cost_eur": 232000000,
+    "grid_connection_cost_eur": 5400000,
+    "power_cost_annual_eur": 22946820,
+    "cooling_cost_annual_eur": 5070000,
+    "total_capital_eur": 237420000,
+    "total_annual_opex_eur": 27916820
+  },
+  {
+    "latitude": 48.9131899,
+    "longitude": 9.1969274,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Transnet BW Umspannwerk Hoheneck",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000,
+      15000,
+      20000
+    ],
+    "land_cost_eur": 8000000.0,
+    "infrastructure_cost_eur": 161800000.0,
+    "grid_connection_cost_eur": 0.0,
+    "power_cost_annual_eur": 275233920.0,
+    "cooling_cost_annual_eur": 111488000000.0,
+    "total_capital_eur": 169800000.0,
+    "total_annual_opex_eur": 111763233920.0
+  },
+  {
+    "latitude": 51.1019974,
+    "longitude": 14.6577721,
+    "total_area_sqm": 25000.0,
+    "capacity_mw": 55.0,
+    "capacity_w": 55000000.0,
+    "industrial_area_name": "Palfinger",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      20000.0,
+      25000.0,
+      30000.0
+    ],
+    "land_cost_eur": 750000.0,
+    "infrastructure_cost_eur": 160800000.0,
+    "grid_connection_cost_eur": 20000000.0,
+    "power_cost_annual_eur": 5130000.0,
+    "cooling_cost_annual_eur": 1098500.0,
+    "total_capital_eur": 181550000.0,
+    "total_annual_opex_eur": 6228500.0
+  },
+  {
+    "latitude": 49.4538932,
+    "longitude": 11.0407024,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      10000,
+      20000,
+      30000
+    ],
+    "land_cost_eur": 21000000.0,
+    "infrastructure_cost_eur": 156900000.0,
+    "grid_connection_cost_eur": 170000000.0,
+    "power_cost_annual_eur": 18420000.0,
+    "cooling_cost_annual_eur": 1757600.0,
+    "total_capital_eur": 377900000.0,
+    "total_annual_opex_eur": 20177600.0
+  },
+  {
+    "latitude": 52.1506384,
+    "longitude": 7.6820492,
+    "total_area_sqm": 0.0,
+    "capacity_mw": 0.0,
+    "capacity_w": 0.0,
+    "raw_output": "{\n  \"latitude\": 52.1506384,\n  \"longitude\": 7.6820492,\n  \"total_area_sqm\": 30000,\n  \"capacity_mw\": 78.0,\n  \"capacity_w\": 78000000.0,\n  \"industrial_area_name\": \"SBS Hummel GmbH\",\n  \"has_plots_for_sale\": false,\n  \"plot_sizes_sqm\": [30000.0],\n  \"land_cost_eur\": 3960000.0,\n  \"infrastructure_cost_eur\": 82800000.0,\n  \"grid_connection_cost_eur\": 9200000.0,\n  \"power_cost_annual_eur\": 61202185.0,\n  \"cooling_cost_annual_eur\": 304200.0,\n  \"total_capital_eur\": 973?00000.0,\n  \"total_annual_opex_eur\": 61506385.0\n}",
+    "industrial_area_name": "SBS Hummel GmbH"
+  },
+  {
+    "latitude": 53.3273281,
+    "longitude": 6.4294931,
+    "total_area_sqm": 20000.0,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000.0,
+    "industrial_area_name": "NAM-locatie Saaksum-1",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      20000.0
+    ],
+    "land_cost_eur": 2200000.0,
+    "infrastructure_cost_eur": 274200000.0,
+    "grid_connection_cost_eur": 5860000.0,
+    "power_cost_annual_eur": 4690000.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 280200000.0,
+    "total_annual_opex_eur": 4690000.0
+  },
+  {
+    "latitude": 48.914433,
+    "longitude": 9.1907126,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Amprion Umspannwerk Hoheneck",
+    "has_plots_for_sale": null,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 13750000.0,
+    "infrastructure_cost_eur": 276000000.0,
+    "grid_connection_cost_eur": 0.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 9126000.0,
+    "total_capital_eur": 289500000.0,
+    "total_annual_opex_eur": 9126000.0
+  }
+]

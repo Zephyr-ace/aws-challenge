@@ -1,0 +1,194 @@
+[
+  {
+    "latitude": 48.0862321,
+    "longitude": 10.6941004,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 12600000.0,
+    "infrastructure_cost_eur": 243600000.0,
+    "grid_connection_cost_eur": 7600000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 14215500.0,
+    "total_capital_eur": 262600000.0,
+    "total_annual_opex_eur": 14215500.0
+  },
+  {
+    "latitude": 49.4065797,
+    "longitude": 9.9166476,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Umspannwerk Niederstetten",
+    "has_plots_for_sale": null,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 2750000.0,
+    "infrastructure_cost_eur": 83750000.0,
+    "grid_connection_cost_eur": 20000000.0,
+    "power_cost_annual_eur": 23557500.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 110750000.0,
+    "total_annual_opex_eur": 23557500.0
+  },
+  {
+    "latitude": 50.1789935,
+    "longitude": 14.6931696,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      20000
+    ],
+    "land_cost_eur": 800000,
+    "infrastructure_cost_eur": 230800000,
+    "grid_connection_cost_eur": 17000000,
+    "power_cost_annual_eur": 52622160,
+    "cooling_cost_annual_eur": 13000000,
+    "total_capital_eur": 247800000,
+    "total_annual_opex_eur": 65900000
+  },
+  {
+    "latitude": 51.2134834,
+    "longitude": 7.145236,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000.0
+    ],
+    "land_cost_eur": 4000000.0,
+    "infrastructure_cost_eur": 326750000.0,
+    "grid_connection_cost_eur": 30000000.0,
+    "power_cost_annual_eur": 68008800.0,
+    "cooling_cost_annual_eur": 132444000.0,
+    "total_capital_eur": 364750000.0,
+    "total_annual_opex_eur": 200452800.0
+  },
+  {
+    "latitude": 53.4077685,
+    "longitude": 7.7353542,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      20000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 3900000.0,
+    "infrastructure_cost_eur": 370200000.0,
+    "grid_connection_cost_eur": 432000000.0,
+    "power_cost_annual_eur": 6946884000.0,
+    "cooling_cost_annual_eur": 4056000.0,
+    "total_capital_eur": 776190000.0,
+    "total_annual_opex_eur": 6950940000.0
+  },
+  {
+    "latitude": 53.46759,
+    "longitude": 14.5998575,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Baza Oznakowania Nawigacyjnego w Szczecinie",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 1000000,
+    "infrastructure_cost_eur": 171500000,
+    "grid_connection_cost_eur": 3960000,
+    "power_cost_annual_eur": 239831280,
+    "cooling_cost_annual_eur": 0,
+    "total_capital_eur": 176460000,
+    "total_annual_opex_eur": 239831280
+  },
+  {
+    "latitude": 48.8089721,
+    "longitude": 9.086212,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 28500000,
+    "infrastructure_cost_eur": 1135200000,
+    "grid_connection_cost_eur": 2200000,
+    "power_cost_annual_eur": 369517824000,
+    "cooling_cost_annual_eur": 0,
+    "total_capital_eur": 1173700000,
+    "total_annual_opex_eur": 369517824000
+  },
+  {
+    "latitude": 49.8293683,
+    "longitude": 10.93813,
+    "total_area_sqm": 30000.0,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Industriegebiet Pettstadt",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 2250000.0,
+    "infrastructure_cost_eur": 324600000.0,
+    "grid_connection_cost_eur": 1700000.0,
+    "power_cost_annual_eur": 256230000.0,
+    "cooling_cost_annual_eur": 102667500.0,
+    "total_capital_eur": 327800000.0,
+    "total_annual_opex_eur": 358897500.0
+  },
+  {
+    "latitude": 53.4263449,
+    "longitude": 7.7379871,
+    "total_area_sqm": 30000.0,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 3900000.0,
+    "infrastructure_cost_eur": 108540000.0,
+    "grid_connection_cost_eur": 4550000.0,
+    "power_cost_annual_eur": 68710800.0,
+    "cooling_cost_annual_eur": 79092000.0,
+    "total_capital_eur": 113990000.0,
+    "total_annual_opex_eur": 147803800.0
+  },
+  {
+    "latitude": 52.1324628,
+    "longitude": 7.5540902,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 2700000.0,
+    "infrastructure_cost_eur": 171300000.0,
+    "grid_connection_cost_eur": 6200000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 7621900.0,
+    "total_capital_eur": 173000000.0,
+    "total_annual_opex_eur": 7621900.0
+  }
+]

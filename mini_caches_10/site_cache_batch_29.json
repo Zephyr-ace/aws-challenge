@@ -1,0 +1,191 @@
+[
+  {
+    "latitude": 54.6882506,
+    "longitude": 8.9265576,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Biosgasanlage Langenhorn",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 6000000.0,
+    "infrastructure_cost_eur": 180000000.0,
+    "grid_connection_cost_eur": 12400000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 193400000.0,
+    "total_annual_opex_eur": 0.0
+  },
+  {
+    "latitude": 53.5480857,
+    "longitude": 14.4732033,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000.0
+    ],
+    "land_cost_eur": 575000.0,
+    "infrastructure_cost_eur": 385500000.0,
+    "grid_connection_cost_eur": 9800000.0,
+    "power_cost_annual_eur": 203560500.0,
+    "cooling_cost_annual_eur": 380250.0,
+    "total_capital_eur": 395355000.0,
+    "total_annual_opex_eur": 203940750.0
+  },
+  {
+    "latitude": 48.1639294,
+    "longitude": 10.7147327,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000,
+      20000,
+      30000
+    ],
+    "land_cost_eur": 11250000,
+    "infrastructure_cost_eur": 201250000,
+    "grid_connection_cost_eur": 3400000,
+    "power_cost_annual_eur": 296088000000,
+    "cooling_cost_annual_eur": 0,
+    "total_capital_eur": 222750000,
+    "total_annual_opex_eur": 296088000000
+  },
+  {
+    "latitude": 50.9780162,
+    "longitude": 13.9832995,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 1200000.0,
+    "infrastructure_cost_eur": 663000000.0,
+    "grid_connection_cost_eur": 30000000.0,
+    "power_cost_annual_eur": 13560000.0,
+    "cooling_cost_annual_eur": 16800000.0,
+    "total_capital_eur": 694200000.0,
+    "total_annual_opex_eur": 30360000.0
+  },
+  {
+    "latitude": 51.3033509,
+    "longitude": 6.0799421,
+    "total_area_sqm": 20000.0,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000.0,
+    "industrial_area_name": "Gasunie",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      20000.0
+    ],
+    "land_cost_eur": 700000.0,
+    "infrastructure_cost_eur": 224800000.0,
+    "grid_connection_cost_eur": 3800000.0,
+    "power_cost_annual_eur": 255820032.0,
+    "cooling_cost_annual_eur": 3443000.0,
+    "total_capital_eur": 229600000.0,
+    "total_annual_opex_eur": 259263032.0
+  },
+  {
+    "latitude": 49.2934341,
+    "longitude": 10.6122207,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Diehl Metering GmbH",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000,
+      15000,
+      20000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 2800000,
+    "infrastructure_cost_eur": 195600000,
+    "grid_connection_cost_eur": 2300000,
+    "power_cost_annual_eur": 681600000,
+    "cooling_cost_annual_eur": 18590000,
+    "total_capital_eur": 198900000,
+    "total_annual_opex_eur": 700190000
+  },
+  {
+    "latitude": 54.6871708,
+    "longitude": 8.9275285,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Klärwerk Langenhorn",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 1650000,
+    "infrastructure_cost_eur": 1017000000,
+    "grid_connection_cost_eur": 12500000,
+    "power_cost_annual_eur": 91500000,
+    "cooling_cost_annual_eur": 11250000,
+    "total_capital_eur": 1039500000,
+    "total_annual_opex_eur": 102750000
+  },
+  {
+    "latitude": 53.5488774,
+    "longitude": 14.4731337,
+    "total_area_sqm": 0.0,
+    "capacity_mw": 0.0,
+    "capacity_w": 0.0,
+    "raw_output": "{\n  \"latitude\": 53.5488774,\n  \"longitude\": 14.4731337,\n  \"total_area_sqm\": 20000,\n  \"capacity_mw\": 52.0,\n  \"capacity_w\": 52000000,\n  \"industrial_area_name\": null,\n  \"has_plots_for_sale\": false,\n  \"plot_sizes_sqm\": [20000],\n  \"land_cost_eur\": 300000.0,\n  \"infrastructure_cost_eur\": 255800000.0,\n  \"grid_connection_cost_eur\": 9900000.0,\n  \"power_cost_annual_eur\": 172341600.0,\n  \"cooling_cost_annual_eur\": 3650400.0,\n  \"total_capital_eur\": 265800000.0,\n  \"total_annual_opex_eur\": 176991,? \n}",
+    "industrial_area_name": "Unknown"
+  },
+  {
+    "latitude": 48.5159534,
+    "longitude": 11.1085494,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 8750000,
+    "infrastructure_cost_eur": 221750000,
+    "grid_connection_cost_eur": 6200000,
+    "power_cost_annual_eur": 314593500,
+    "cooling_cost_annual_eur": 30208750,
+    "total_capital_eur": 228950000,
+    "total_annual_opex_eur": 344802250
+  },
+  {
+    "latitude": 50.5753969,
+    "longitude": 13.5960786,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000,
+      20000,
+      30000,
+      50000
+    ],
+    "land_cost_eur": 2200000.0,
+    "infrastructure_cost_eur": 90800000.0,
+    "grid_connection_cost_eur": 14500000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 106500000.0,
+    "total_annual_opex_eur": 0.0
+  }
+]

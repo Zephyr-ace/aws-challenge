@@ -1,6 +1,6 @@
 """Orchestrator agent that coordinates the four cost estimation agents."""
 
-from agents import Agent, function_tool
+from agents import Agent, WebSearchTool, function_tool
 
 from dc_agents.land_cost import land_cost_agent
 from dc_agents.infrastructure import infrastructure_agent
@@ -23,34 +23,37 @@ def get_datacenter_capacity(total_area: float) -> str:
 
 orchestrator_agent = Agent(
     name="Data Center Cost Orchestrator",
-    model="gpt-5.4-mini",
+    model="gpt-5.4-nano",
     instructions=(
-        "You are a data center site evaluation orchestrator.\n\n"
-        "Given coordinates (latitude, longitude) and total area in m², you MUST:\n"
-        "1. Call get_datacenter_capacity with the total area to obtain the facility power capacity.\n"
-        "2. Call ALL FOUR cost estimation tools:\n"
-        "   - estimate_land_cost — total land purchase cost\n"
-        "   - estimate_infrastructure_cost — building, network, and cooling infrastructure capital cost\n"
-        "   - estimate_power_cost — annual electricity cost\n"
-        "   - estimate_cooling_cost — annual operational cooling cost\n\n"
-        "Then compile a final summary report with all costs clearly listed in EUR.\n\n"
-        "You MUST respond with ONLY a valid JSON object (no markdown, no extra text) "
-        "in this exact format:\n"
+        "You evaluate data center sites. Be extremely brief in all responses.\n"
+        "Assume modern, efficient designs and competitive market conditions.\n\n"
+        "Given coordinates, optionally area in m², and substation info:\n"
+        "0. If area is unknown/zero, estimate a realistic BUILDABLE PLOT size (typically "
+        "10,000-50,000 m² for a single DC campus, not the entire industrial zone).\n"
+        "1. Call get_datacenter_capacity with the area.\n"
+        "2. Web search the industrial area name and plot availability.\n"
+        "3. Call ALL FOUR cost tools: estimate_land_cost, estimate_infrastructure_cost, "
+        "estimate_power_cost, estimate_cooling_cost.\n\n"
+        "IMPORTANT cost factors to consider:\n"
+        "- Grid connection cost: use substation distance provided. Estimate ~€1M/km for "
+        "HV line + transformer costs. Add this to infrastructure_cost.\n"
+        "- Closer substations with higher voltage = cheaper and more reliable power.\n"
+        "- Factor in redundancy (N+1 power/cooling) in infrastructure costs.\n"
+        "- Consider local renewable energy availability for power pricing.\n\n"
+        "Respond with ONLY this JSON (no markdown):\n"
         "{\n"
-        '  "latitude": <float>,\n'
-        '  "longitude": <float>,\n'
-        '  "total_area_sqm": <float>,\n'
-        '  "capacity_mw": <float>,\n'
-        '  "capacity_w": <float>,\n'
-        '  "land_cost_eur": <float>,\n'
-        '  "infrastructure_cost_eur": <float>,\n'
-        '  "power_cost_annual_eur": <float>,\n'
-        '  "cooling_cost_annual_eur": <float>,\n'
-        '  "total_capital_eur": <float>,\n'
-        '  "total_annual_opex_eur": <float>\n'
+        '  "latitude": <float>, "longitude": <float>,\n'
+        '  "total_area_sqm": <float>, "capacity_mw": <float>, "capacity_w": <float>,\n'
+        '  "industrial_area_name": "<str or null>",\n'
+        '  "has_plots_for_sale": <bool>, "plot_sizes_sqm": [<float>],\n'
+        '  "land_cost_eur": <float>, "infrastructure_cost_eur": <float>,\n'
+        '  "grid_connection_cost_eur": <float>,\n'
+        '  "power_cost_annual_eur": <float>, "cooling_cost_annual_eur": <float>,\n'
+        '  "total_capital_eur": <float>, "total_annual_opex_eur": <float>\n'
         "}"
     ),
     tools=[
+        WebSearchTool(),
         get_datacenter_capacity,
         land_cost_agent.as_tool(
             tool_name="estimate_land_cost",

@@ -21,11 +21,9 @@ import numpy as np
 from area_fetching.config import load_config
 from area_fetching.enricher import MetadataEnricher
 from area_fetching.filter_engine import FilterEngine
-from area_fetching.llm_helper import LLMHelper
 from area_fetching.models import AppConfig, AreaResult
 from area_fetching.overpass import OverpassClient
 from area_fetching.progress import ProgressTracker
-from area_fetching.web_research_agent import WebResearchAgent
 
 logger = logging.getLogger("find_areas")
 
@@ -145,61 +143,18 @@ def _fetch_overpass_data(
 
 
 # ------------------------------------------------------------------
-# Phase 2 – LLM web research (parallel)
-# ------------------------------------------------------------------
-
-def _run_web_research(
-    areas: list[dict],
-    config: AppConfig,
-) -> None:
-    """Run LLM web research on *areas* in parallel with progress bar.
-
-    Mutates each area dict in-place by adding a ``"web_research"`` key.
-    """
-    total = len(areas)
-    if total == 0:
-        return
-
-    progress = ProgressTracker("LLM research", total)
-    llm = LLMHelper(config.llm)
-    agent = WebResearchAgent(llm)
-
-    def _research_one(area: dict) -> None:
-        result = agent.research_area(
-            lat=area["center"]["lat"],
-            lon=area["center"]["lon"],
-            osm_tags=area.get("tags"),
-        )
-        area["web_research"] = result
-        progress.advance()
-
-    workers = max(1, config.pipeline.llm_workers)
-
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        futs = [pool.submit(_research_one, a) for a in areas]
-        for fut in as_completed(futs):
-            try:
-                fut.result()
-            except Exception:
-                logger.exception("LLM research failed for an area")
-
-    progress.finish()
-
-
-# ------------------------------------------------------------------
 # Main entry point
 # ------------------------------------------------------------------
 
 def find_areas(config_path: str) -> list[AreaResult]:
     """Find potential data-centre sites in German industrial areas.
 
-    Optimised pipeline:
+    Pipeline:
     1. Load configuration.
     2. Fetch Overpass data (parallel, chunked, cached) with progress.
     3. Apply proximity filters.
     4. Spatially sample to ``max_locations``.
-    5. Run LLM web research on survivors only (parallel) with progress.
-    6. Enrich and return.
+    5. Enrich and return.
     """
     sys.stderr.write("═══ find_areas pipeline ═══\n")
 
@@ -218,20 +173,15 @@ def find_areas(config_path: str) -> list[AreaResult]:
     # 3. Filter (fast, in-memory)
     engine = FilterEngine(config.filter)
     filtered = engine.apply_filters(industrial, power_lines, water_sources, substations)
-    sys.stderr.write(f"  Filters: {len(industrial)} → {len(filtered)} areas\n")
 
     # 4. Spatial sampling
     max_loc = config.pipeline.max_locations
     sampled = _spatially_sample(filtered, max_loc)
-    sys.stderr.write(f"  Sampled: {len(filtered)} → {len(sampled)} areas (max_locations={max_loc})\n")
 
-    # 5. LLM research (only on sampled areas)
-    _run_web_research(sampled, config)
-
-    # 6. Enrich
+    # 5. Enrich
     enricher = MetadataEnricher()
     results = enricher.enrich(sampled, power_lines, water_sources, config.filter)
 
-    sys.stderr.write(f"  Done: {len(results)} results\n")
+    sys.stderr.write(f"  {len(industrial)} areas → {len(filtered)} filtered → {len(sampled)} sampled → {len(results)} enriched\n")
     sys.stderr.write("═══════════════════════════\n")
     return results

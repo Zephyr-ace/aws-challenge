@@ -1,0 +1,201 @@
+[
+  {
+    "latitude": 48.4906137,
+    "longitude": 10.1255775,
+    "total_area_sqm": 30000.0,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      10000.0,
+      20000.0,
+      30000.0,
+      40000.0
+    ],
+    "land_cost_eur": 54000000.0,
+    "infrastructure_cost_eur": 260400000.0,
+    "grid_connection_cost_eur": 3000000.0,
+    "power_cost_annual_eur": 255750000.0,
+    "cooling_cost_annual_eur": 10513152.0,
+    "total_capital_eur": 323400000.0,
+    "total_annual_opex_eur": 266263152.0
+  },
+  {
+    "latitude": 50.0456776,
+    "longitude": 8.9950522,
+    "total_area_sqm": 30000.0,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Gewerbegebiet Hirtenäcker",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 6000000.0,
+    "infrastructure_cost_eur": 284400000.0,
+    "grid_connection_cost_eur": 1500000.0,
+    "power_cost_annual_eur": 2558200320.0,
+    "cooling_cost_annual_eur": 16055000.0,
+    "total_capital_eur": 291900000.0,
+    "total_annual_opex_eur": 2574255320.0
+  },
+  {
+    "latitude": 50.9802169,
+    "longitude": 13.9440658,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 11250000,
+    "infrastructure_cost_eur": 886600000,
+    "grid_connection_cost_eur": 7200000,
+    "power_cost_annual_eur": 203560500,
+    "cooling_cost_annual_eur": 58500000,
+    "total_capital_eur": 902800000,
+    "total_annual_opex_eur": 262060500
+  },
+  {
+    "latitude": 51.2283795,
+    "longitude": 7.0612989,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": null,
+    "plot_sizes_sqm": [
+      20000
+    ],
+    "land_cost_eur": 900000,
+    "infrastructure_cost_eur": 138800000,
+    "grid_connection_cost_eur": 1000000,
+    "power_cost_annual_eur": 43729920,
+    "cooling_cost_annual_eur": 2310,
+    "total_capital_eur": 141700000,
+    "total_annual_opex_eur": 43732230
+  },
+  {
+    "latitude": 53.5624894,
+    "longitude": 8.5704035,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000.0,
+    "industrial_area_name": "wesernetz Bremerhaven GmbH",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      2200,
+      2600,
+      3200,
+      4500,
+      5000
+    ],
+    "land_cost_eur": 900000.0,
+    "infrastructure_cost_eur": 185800000.0,
+    "grid_connection_cost_eur": 210000000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 4095.0,
+    "total_capital_eur": 391800000.0,
+    "total_annual_opex_eur": 4095.0
+  },
+  {
+    "latitude": 48.4983871,
+    "longitude": 10.0827103,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      15000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 19500000,
+    "infrastructure_cost_eur": 292500000,
+    "grid_connection_cost_eur": 3000000,
+    "power_cost_annual_eur": 21318336000,
+    "cooling_cost_annual_eur": 35591400,
+    "total_capital_eur": 312500000,
+    "total_annual_opex_eur": 21353927400
+  },
+  {
+    "latitude": 53.6069474,
+    "longitude": 14.5332521,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Pracownia kamieniarska Diament",
+    "has_plots_for_sale": null,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 2400000,
+    "infrastructure_cost_eur": 82000000,
+    "grid_connection_cost_eur": 16500000,
+    "power_cost_annual_eur": 6949000,
+    "cooling_cost_annual_eur": 3750000,
+    "total_capital_eur": 103400000,
+    "total_annual_opex_eur": 10649000
+  },
+  {
+    "latitude": 50.9804559,
+    "longitude": 13.9435001,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Wasserbehälter",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 10500000,
+    "infrastructure_cost_eur": 360800000,
+    "grid_connection_cost_eur": 14000000,
+    "power_cost_annual_eur": 125000000,
+    "cooling_cost_annual_eur": 16731000,
+    "total_capital_eur": 376800000,
+    "total_annual_opex_eur": 141731000
+  },
+  {
+    "latitude": 51.9369695,
+    "longitude": 8.4245486,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 2250000.0,
+    "infrastructure_cost_eur": 174300000.0,
+    "grid_connection_cost_eur": 4200000.0,
+    "power_cost_annual_eur": 1273548000.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 178550000.0,
+    "total_annual_opex_eur": 1273548000.0
+  },
+  {
+    "latitude": 50.2597777,
+    "longitude": 10.9271707,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": null,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 5100000.0,
+    "infrastructure_cost_eur": 199600000.0,
+    "grid_connection_cost_eur": 3200000.0,
+    "power_cost_annual_eur": 7665968.0,
+    "cooling_cost_annual_eur": 9886500.0,
+    "total_capital_eur": 215600000.0,
+    "total_annual_opex_eur": 17502468.0
+  }
+]

@@ -1,0 +1,203 @@
+[
+  {
+    "latitude": 47.2812499,
+    "longitude": 11.4118289,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000,
+      20000,
+      30000
+    ],
+    "land_cost_eur": 8550000.0,
+    "infrastructure_cost_eur": 148200000.0,
+    "grid_connection_cost_eur": 6900000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 4563000.0,
+    "total_capital_eur": 163950000.0,
+    "total_annual_opex_eur": 4563000.0
+  },
+  {
+    "latitude": 49.427767,
+    "longitude": 10.9404683,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 3300000.0,
+    "infrastructure_cost_eur": 117100000.0,
+    "grid_connection_cost_eur": 1000000.0,
+    "power_cost_annual_eur": 57775385.0,
+    "cooling_cost_annual_eur": 1806386.0,
+    "total_capital_eur": 120400000.0,
+    "total_annual_opex_eur": 59581771.0
+  },
+  {
+    "latitude": 53.4490068,
+    "longitude": 6.8068716,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "NAM-locatie Uithuizermeeden",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 3600000.0,
+    "infrastructure_cost_eur": 111000000.0,
+    "grid_connection_cost_eur": 800000.0,
+    "power_cost_annual_eur": 172258800.0,
+    "cooling_cost_annual_eur": 105300.0,
+    "total_capital_eur": 117800000.0,
+    "total_annual_opex_eur": 172364100.0
+  },
+  {
+    "latitude": 52.6452847,
+    "longitude": 6.8568598,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      20000.0
+    ],
+    "land_cost_eur": 1200000.0,
+    "infrastructure_cost_eur": 181000000.0,
+    "grid_connection_cost_eur": 4800000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 187000000.0,
+    "total_annual_opex_eur": 0.0
+  },
+  {
+    "latitude": 53.5659368,
+    "longitude": 14.5449504,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 500000.0,
+    "infrastructure_cost_eur": 97250000.0,
+    "grid_connection_cost_eur": 10400000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 9.34,
+    "total_capital_eur": 108250000.0,
+    "total_annual_opex_eur": 9.34
+  },
+  {
+    "latitude": 49.4945605,
+    "longitude": 13.209915,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "FVE",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000,
+      20000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 1050000.0,
+    "infrastructure_cost_eur": 189000000.0,
+    "grid_connection_cost_eur": 14930000.0,
+    "power_cost_annual_eur": 2277600.0,
+    "cooling_cost_annual_eur": 18590000.0,
+    "total_capital_eur": 205130000.0,
+    "total_annual_opex_eur": 20867600.0
+  },
+  {
+    "latitude": 48.7768796,
+    "longitude": 11.4237991,
+    "total_area_sqm": 30000.0,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "AUMOVIO",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      20000.0,
+      30000.0,
+      40000.0
+    ],
+    "land_cost_eur": 19500000.0,
+    "infrastructure_cost_eur": 16500663.0,
+    "grid_connection_cost_eur": 3000000.0,
+    "power_cost_annual_eur": 120000000.0,
+    "cooling_cost_annual_eur": 20000000.0,
+    "total_capital_eur": 39300663.0,
+    "total_annual_opex_eur": 140000000.0
+  },
+  {
+    "latitude": 50.4825664,
+    "longitude": 12.3677973,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000.0,
+      20000.0,
+      30000.0
+    ],
+    "land_cost_eur": 8250000.0,
+    "infrastructure_cost_eur": 368000000.0,
+    "grid_connection_cost_eur": 0.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 376250000.0,
+    "total_annual_opex_eur": 0.0
+  },
+  {
+    "latitude": 49.9114725,
+    "longitude": 10.8542714,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Müllheizkraftwerk Bamberg",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 5100000.0,
+    "infrastructure_cost_eur": 156900000.0,
+    "grid_connection_cost_eur": 3300000.0,
+    "power_cost_annual_eur": 266479200.0,
+    "cooling_cost_annual_eur": 4074000.0,
+    "total_capital_eur": 165200000.0,
+    "total_annual_opex_eur": 270553200.0
+  },
+  {
+    "latitude": 53.4485239,
+    "longitude": 6.8034456,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Vopak Terminal Eemshaven",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      25000,
+      15000,
+      35000
+    ],
+    "land_cost_eur": 2000000,
+    "infrastructure_cost_eur": 142500000,
+    "grid_connection_cost_eur": 600000,
+    "power_cost_annual_eur": 0,
+    "cooling_cost_annual_eur": 101400,
+    "total_capital_eur": 145100000,
+    "total_annual_opex_eur": 101400
+  }
+]

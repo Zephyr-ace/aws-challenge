@@ -1,0 +1,194 @@
+[
+  {
+    "latitude": 50.6655387,
+    "longitude": 9.3539166,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Holzwerk Pfeifer",
+    "has_plots_for_sale": null,
+    "plot_sizes_sqm": [
+      20000
+    ],
+    "land_cost_eur": 13000000.0,
+    "infrastructure_cost_eur": 374400000.0,
+    "grid_connection_cost_eur": null,
+    "power_cost_annual_eur": null,
+    "cooling_cost_annual_eur": 2730000.0,
+    "total_capital_eur": null,
+    "total_annual_opex_eur": null
+  },
+  {
+    "latitude": 53.1808655,
+    "longitude": 8.2189876,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 4500000.0,
+    "infrastructure_cost_eur": 262500000.0,
+    "grid_connection_cost_eur": 4000000.0,
+    "power_cost_annual_eur": 19217250.0,
+    "cooling_cost_annual_eur": 2856100.0,
+    "total_capital_eur": 270500000.0,
+    "total_annual_opex_eur": 22073350.0
+  },
+  {
+    "latitude": 51.2022307,
+    "longitude": 7.3023742,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 3000000.0,
+    "infrastructure_cost_eur": 170750000.0,
+    "grid_connection_cost_eur": 5400000.0,
+    "power_cost_annual_eur": 78292500.0,
+    "cooling_cost_annual_eur": 6506500.0,
+    "total_capital_eur": 178750000.0,
+    "total_annual_opex_eur": 84899000.0
+  },
+  {
+    "latitude": 48.2115647,
+    "longitude": 11.2479575,
+    "total_area_sqm": 0.0,
+    "capacity_mw": 0.0,
+    "capacity_w": 0.0,
+    "raw_output": "{\n  \"latitude\": 48.2115647,\n  \"longitude\": 11.2479575,\n  \"total_area_sqm\": 30000,\n  \"capacity_mw\": 78.0,\n  \"capacity_w\": 78000000.0,\n  \"industrial_area_name\": null,\n  \"has_plots_for_sale\": false,\n  \"plot_sizes_sqm\": [30000],\n  \"land_cost_eur\": 21600000.0,\n  \"infrastructure_cost_eur\": 152400000.0,\n  \"grid_connection_cost_eur\": 0.0,\n  \"power_cost_annual_eur\": 0.0,\n  \"cooling_cost_annual_eur\": 422500.0,\n  \"total_capital_eur\": 173,?0.0,\n  \"total_annual_opex_eur\": 422500.0\n}",
+    "industrial_area_name": "Unknown"
+  },
+  {
+    "latitude": 53.678556,
+    "longitude": 15.015952,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 660000.0,
+    "infrastructure_cost_eur": 334800000.0,
+    "grid_connection_cost_eur": 16700000.0,
+    "power_cost_annual_eur": 85410000.0,
+    "cooling_cost_annual_eur": 140580000.0,
+    "total_capital_eur": 351070000.0,
+    "total_annual_opex_eur": 225990000.0
+  },
+  {
+    "latitude": 50.2117142,
+    "longitude": 11.9537495,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      12000,
+      25000,
+      40000
+    ],
+    "land_cost_eur": 750000,
+    "infrastructure_cost_eur": 59000000,
+    "grid_connection_cost_eur": 10600000,
+    "power_cost_annual_eur": 2767284000,
+    "cooling_cost_annual_eur": 50778000,
+    "total_capital_eur": 70500000,
+    "total_annual_opex_eur": 2828062000
+  },
+  {
+    "latitude": 50.8162843,
+    "longitude": 13.4823055,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      8000,
+      15000,
+      20000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 1950000.0,
+    "infrastructure_cost_eur": 245400000.0,
+    "grid_connection_cost_eur": 13300000.0,
+    "power_cost_annual_eur": 199859400.0,
+    "cooling_cost_annual_eur": 1404000.0,
+    "total_capital_eur": 259350000.0,
+    "total_annual_opex_eur": 201263400.0
+  },
+  {
+    "latitude": 52.2498861,
+    "longitude": 7.0051148,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "De Zoeker-Esch",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      3215,
+      30000
+    ],
+    "land_cost_eur": 5250000,
+    "infrastructure_cost_eur": 111600000,
+    "grid_connection_cost_eur": 100000,
+    "power_cost_annual_eur": 68804000,
+    "cooling_cost_annual_eur": 13219800,
+    "total_capital_eur": 116700000,
+    "total_annual_opex_eur": 82023800
+  },
+  {
+    "latitude": 53.2601033,
+    "longitude": 6.6442125,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "NAM-locatie Ten Boer",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000.0,
+      20000.0,
+      30000.0
+    ],
+    "land_cost_eur": 2100000.0,
+    "infrastructure_cost_eur": 331800000.0,
+    "grid_connection_cost_eur": 6500000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 335900000.0,
+    "total_annual_opex_eur": 0.0
+  },
+  {
+    "latitude": 53.6194504,
+    "longitude": 14.9298215,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      15000,
+      25000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 60000.0,
+    "infrastructure_cost_eur": 296100000.0,
+    "grid_connection_cost_eur": 21900000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 10038600.0,
+    "total_capital_eur": 318000000.0,
+    "total_annual_opex_eur": 10038600.0
+  }
+]

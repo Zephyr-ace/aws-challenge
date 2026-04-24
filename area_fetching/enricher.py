@@ -1,10 +1,28 @@
 """Metadata enrichment for filtered industrial areas."""
 
 import logging
+from math import cos, radians
 
-from area_fetching.models import AreaResult, FilterConfig, WebResearchResult
+from area_fetching.models import AreaResult, FilterConfig
 
 logger = logging.getLogger("find_areas")
+
+
+def _bbox_area_sqm(bounds: dict) -> float:
+    """Approximate area in m² from an Overpass bounding box.
+
+    Uses Equirectangular projection: width adjusted by cos(mid_lat).
+    """
+    min_lat = bounds.get("minlat", 0.0)
+    max_lat = bounds.get("maxlat", 0.0)
+    min_lon = bounds.get("minlon", 0.0)
+    max_lon = bounds.get("maxlon", 0.0)
+
+    mid_lat_rad = radians((min_lat + max_lat) / 2)
+    # 1 degree latitude ≈ 111,320 m
+    height_m = (max_lat - min_lat) * 111_320
+    width_m = (max_lon - min_lon) * 111_320 * cos(mid_lat_rad)
+    return abs(height_m * width_m)
 
 
 class MetadataEnricher:
@@ -23,17 +41,6 @@ class MetadataEnricher:
         (``distance_power_line_km``, ``water_source_name``,
         ``distance_water_source_km``) are only included when the
         corresponding criterion is active in *config*.
-
-        Args:
-            filtered_areas: Areas that passed the filter engine.
-            power_lines: Power-line data (unused directly, kept for API
-                symmetry with the pipeline).
-            water_sources: Water-source data (unused directly, kept for
-                API symmetry with the pipeline).
-            config: The active filter configuration.
-
-        Returns:
-            A list of :class:`AreaResult` typed dicts.
         """
         logger.info("Enriching %d areas with metadata...", len(filtered_areas))
 
@@ -45,33 +52,25 @@ class MetadataEnricher:
                 area["center"]["lon"],
             )
 
-            web_research: WebResearchResult = area.get(
-                "web_research", WebResearchResult()
-            )
-
-            # Determine area_sqm from bounds, tags, or default
+            # Determine area_sqm from bounding box or tags
             bounds = area.get("bounds")
-            if bounds is not None:
-                area_sqm = float(bounds)
+            if bounds is not None and isinstance(bounds, dict):
+                area_sqm = _bbox_area_sqm(bounds)
             else:
                 area_sqm_raw = area.get("tags", {}).get("area")
-                area_sqm = float(area_sqm_raw) if area_sqm_raw is not None else 0.0
+                try:
+                    area_sqm = float(area_sqm_raw) if area_sqm_raw is not None else 0.0
+                except (ValueError, TypeError):
+                    area_sqm = 0.0
 
-            # Determine industrial area name
-            industrial_area_name = (
-                web_research.area_name
-                or area.get("tags", {}).get("name")
-            )
+            # Determine industrial area name from OSM tags
+            industrial_area_name = area.get("tags", {}).get("name")
 
             result: AreaResult = {
                 "latitude": area["center"]["lat"],
                 "longitude": area["center"]["lon"],
                 "area_sqm": area_sqm,
                 "industrial_area_name": industrial_area_name,
-                "has_plots_for_sale": web_research.has_plots_for_sale,
-                "plot_sizes_sqm": web_research.plot_sizes_sqm,
-                "research_confidence": web_research.confidence,
-                "research_sources": web_research.sources,
             }
 
             # Conditional fields

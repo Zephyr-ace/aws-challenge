@@ -1,0 +1,203 @@
+[
+  {
+    "latitude": 53.312586,
+    "longitude": 7.5813003,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Kläranlage Hesel",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 2400000.0,
+    "infrastructure_cost_eur": 190440000.0,
+    "grid_connection_cost_eur": 8800000.0,
+    "power_cost_annual_eur": 102492000.0,
+    "cooling_cost_annual_eur": 16380000.0,
+    "total_capital_eur": 196840000.0,
+    "total_annual_opex_eur": 118872000.0
+  },
+  {
+    "latitude": 53.6623235,
+    "longitude": 14.9959739,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000.0,
+      20000.0,
+      30000.0,
+      50000.0
+    ],
+    "land_cost_eur": 195000.0,
+    "infrastructure_cost_eur": 486000000.0,
+    "grid_connection_cost_eur": 17900000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 428415.0,
+    "total_capital_eur": 503950000.0,
+    "total_annual_opex_eur": 428415.0
+  },
+  {
+    "latitude": 48.7090079,
+    "longitude": 10.7544228,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 45000000,
+    "infrastructure_cost_eur": 164750000,
+    "grid_connection_cost_eur": 100000000,
+    "power_cost_annual_eur": 0,
+    "cooling_cost_annual_eur": 126750000,
+    "total_capital_eur": 315750000,
+    "total_annual_opex_eur": 126750000
+  },
+  {
+    "latitude": 50.2099611,
+    "longitude": 11.9574026,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Sägewerk",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      20000
+    ],
+    "land_cost_eur": 6400000.0,
+    "infrastructure_cost_eur": 120200000.0,
+    "grid_connection_cost_eur": 10800000.0,
+    "power_cost_annual_eur": 177652800.0,
+    "cooling_cost_annual_eur": 13000000.0,
+    "total_capital_eur": 132660000.0,
+    "total_annual_opex_eur": 190652800.0
+  },
+  {
+    "latitude": 49.4020054,
+    "longitude": 14.3442447,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000,
+      20000,
+      30000
+    ],
+    "land_cost_eur": 750000.0,
+    "infrastructure_cost_eur": 61200000.0,
+    "grid_connection_cost_eur": 25000000.0,
+    "power_cost_annual_eur": 291532.8,
+    "cooling_cost_annual_eur": 9666800.0,
+    "total_capital_eur": 86075000.0,
+    "total_annual_opex_eur": 10683332.8
+  },
+  {
+    "latitude": 51.4251698,
+    "longitude": 6.1056509,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000.0,
+    "industrial_area_name": "Kurstjens B. V.",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000.0
+    ],
+    "land_cost_eur": 4625000.0,
+    "infrastructure_cost_eur": 257500000.0,
+    "grid_connection_cost_eur": 40000000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 2070250.0,
+    "total_capital_eur": 304750000.0,
+    "total_annual_opex_eur": 2070250.0
+  },
+  {
+    "latitude": 53.6779727,
+    "longitude": 15.0126031,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      10000,
+      20000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 6000000,
+    "infrastructure_cost_eur": 149100000,
+    "grid_connection_cost_eur": 16600000,
+    "power_cost_annual_eur": 91832500,
+    "cooling_cost_annual_eur": 0,
+    "total_capital_eur": 175100000,
+    "total_annual_opex_eur": 91832500
+  },
+  {
+    "latitude": 53.3549672,
+    "longitude": 7.2142627,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Hafen Nord",
+    "has_plots_for_sale": null,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 5400000.0,
+    "infrastructure_cost_eur": 351000000.0,
+    "grid_connection_cost_eur": 900000.0,
+    "power_cost_annual_eur": 330000000.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 356900000.0,
+    "total_annual_opex_eur": 330000000.0
+  },
+  {
+    "latitude": 48.7156865,
+    "longitude": 10.7583698,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 21000000.0,
+    "infrastructure_cost_eur": 339000000.0,
+    "grid_connection_cost_eur": 0.0,
+    "power_cost_annual_eur": 370110000.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 360000000.0,
+    "total_annual_opex_eur": 370110000.0
+  },
+  {
+    "latitude": 49.4015158,
+    "longitude": 14.3446531,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      15000,
+      20000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 750000,
+    "infrastructure_cost_eur": 189300000,
+    "grid_connection_cost_eur": 25000000,
+    "power_cost_annual_eur": 22206600000,
+    "cooling_cost_annual_eur": 5867680,
+    "total_capital_eur": 214300000,
+    "total_annual_opex_eur": 22212467680
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "latitude": 51.0223728,
+    "longitude": 11.5383453,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "An der Utenbacher Straße",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 1800000,
+    "infrastructure_cost_eur": 408000000,
+    "grid_connection_cost_eur": 11300000,
+    "power_cost_annual_eur": 0,
+    "cooling_cost_annual_eur": 167310000,
+    "total_capital_eur": 531000000,
+    "total_annual_opex_eur": 167310000
+  },
+  {
+    "latitude": 54.6756651,
+    "longitude": 8.9085329,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Holzhäuser & Zimmerei Richardsen GmbH",
+    "has_plots_for_sale": null,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 2400000.0,
+    "infrastructure_cost_eur": 179100000.0,
+    "grid_connection_cost_eur": 15390000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 102960000.0,
+    "total_capital_eur": 199410000.0,
+    "total_annual_opex_eur": 102960000.0
+  },
+  {
+    "latitude": 53.5168143,
+    "longitude": 14.3513999,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      40341,
+      20000,
+      10000
+    ],
+    "land_cost_eur": 800000,
+    "infrastructure_cost_eur": 241600000,
+    "grid_connection_cost_eur": 14100000,
+    "power_cost_annual_eur": 68328000,
+    "cooling_cost_annual_eur": 19773000,
+    "total_capital_eur": 255700000,
+    "total_annual_opex_eur": 88101000
+  },
+  {
+    "latitude": 52.7227802,
+    "longitude": 6.8104458,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000.0,
+      20000.0,
+      30000.0,
+      40000.0
+    ],
+    "land_cost_eur": 6000000.0,
+    "infrastructure_cost_eur": 453000000.0,
+    "grid_connection_cost_eur": 8000000.0,
+    "power_cost_annual_eur": 29068725.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 472000000.0,
+    "total_annual_opex_eur": 29068725.0
+  },
+  {
+    "latitude": 49.2916703,
+    "longitude": 10.6114167,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 3000000,
+    "infrastructure_cost_eur": 83750000,
+    "grid_connection_cost_eur": 1100000,
+    "power_cost_annual_eur": 444132000,
+    "cooling_cost_annual_eur": 1901250,
+    "total_capital_eur": 88525000,
+    "total_annual_opex_eur": 446033250
+  },
+  {
+    "latitude": 48.506805,
+    "longitude": 11.1194563,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 2550000.0,
+    "infrastructure_cost_eur": 196200000.0,
+    "grid_connection_cost_eur": 4900000.0,
+    "power_cost_annual_eur": 162165000.0,
+    "cooling_cost_annual_eur": 1067400000.0,
+    "total_capital_eur": 201150000.0,
+    "total_annual_opex_eur": 1229565000.0
+  },
+  {
+    "latitude": 53.562701,
+    "longitude": 8.5726848,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Gewerbegebiet Batteriestraße",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 1650000.0,
+    "infrastructure_cost_eur": 448500000.0,
+    "grid_connection_cost_eur": 2090000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 2437500.0,
+    "total_capital_eur": 451600000.0,
+    "total_annual_opex_eur": 2437500.0
+  },
+  {
+    "latitude": 51.2263708,
+    "longitude": 7.0566889,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000.0
+    ],
+    "land_cost_eur": 5000000.0,
+    "infrastructure_cost_eur": 333500000.0,
+    "grid_connection_cost_eur": 25000000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 6435000.0,
+    "total_capital_eur": 368500000.0,
+    "total_annual_opex_eur": 6435000.0
+  },
+  {
+    "latitude": 53.6071941,
+    "longitude": 14.5308653,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Ecopol",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 1375000,
+    "infrastructure_cost_eur": 199750000,
+    "grid_connection_cost_eur": 15000000,
+    "power_cost_annual_eur": 277867,
+    "cooling_cost_annual_eur": 21970000,
+    "total_capital_eur": 214125000,
+    "total_annual_opex_eur": 22247867
+  },
+  {
+    "latitude": 49.6110058,
+    "longitude": 13.087348,
+    "total_area_sqm": 30000,
+    "capacity_mw": 101,
+    "capacity_w": 101000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000,
+      20000,
+      30000,
+      50000
+    ],
+    "land_cost_eur": 360000,
+    "infrastructure_cost_eur": 31150000,
+    "grid_connection_cost_eur": 18000000,
+    "power_cost_annual_eur": 142122240,
+    "cooling_cost_annual_eur": 14196000,
+    "total_capital_eur": 31510000,
+    "total_annual_opex_eur": 156318240
+  }
+]

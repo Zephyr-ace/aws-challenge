@@ -1,0 +1,179 @@
+[
+  {
+    "latitude": 48.6234419,
+    "longitude": 10.2264945,
+    "total_area_sqm": 0.0,
+    "capacity_mw": 0.0,
+    "capacity_w": 0.0,
+    "raw_output": "{\n  \"latitude\": 48.6234419,\n  \"longitude\": 10.2264945,\n  \"total_area_sqm\": 25000,\n  \"capacity_mw\": 65.0,\n  \"capacity_w\": 65000000,\n  \"industrial_area_name\": \"BSH Hausgeräte GmbH\",\n  \"has_plots_for_sale\": null,\n  \"plot_sizes_sqm\": [10000, 20000, 25000, 35000],\n  \"land_cost_eur\": 5500000.0,\n  \"infrastructure_cost_eur\": 309500000.0,\n  \"grid_connection_cost_eur\": 10400000.0,\n  \"power_cost_annual_eur\": 2383508400.0,\n  \"cooling_cost_annual_eur\": 0.0,\n  \"total_capital_eur\": 324,? ,\n  \"total_annual_opex_eur\": 2383508400.0\n}",
+    "industrial_area_name": "BSH Hausgeräte GmbH"
+  },
+  {
+    "latitude": 50.9997805,
+    "longitude": 13.6456888,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65,
+    "capacity_w": 65000000,
+    "industrial_area_name": "RVSOE Betriebshof Freital",
+    "has_plots_for_sale": null,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 2125000,
+    "infrastructure_cost_eur": 137250000,
+    "grid_connection_cost_eur": 11307000,
+    "power_cost_annual_eur": 6063882240,
+    "cooling_cost_annual_eur": 119340000,
+    "total_capital_eur": 159730000,
+    "total_annual_opex_eur": 6183222240
+  },
+  {
+    "latitude": 53.3583372,
+    "longitude": 7.2200023,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000,
+      20000,
+      15000
+    ],
+    "land_cost_eur": 4350000.0,
+    "infrastructure_cost_eur": 105000000.0,
+    "grid_connection_cost_eur": 2000000.0,
+    "power_cost_annual_eur": 1946000000.0,
+    "cooling_cost_annual_eur": 5400.0,
+    "total_capital_eur": 112450000.0,
+    "total_annual_opex_eur": 1946005400.0
+  },
+  {
+    "latitude": 51.3689148,
+    "longitude": 6.4408352,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000.0,
+      20000.0,
+      30000.0,
+      50000.0
+    ],
+    "land_cost_eur": 1350000.0,
+    "infrastructure_cost_eur": 298200000.0,
+    "grid_connection_cost_eur": 17000000.0,
+    "power_cost_annual_eur": 153000000.0,
+    "cooling_cost_annual_eur": 43472000.0,
+    "total_capital_eur": 315200000.0,
+    "total_annual_opex_eur": 196472000.0
+  },
+  {
+    "latitude": 49.5027812,
+    "longitude": 11.2728413,
+    "total_area_sqm": 0.0,
+    "capacity_mw": 0.0,
+    "capacity_w": 0.0,
+    "raw_output": "{\n  \"latitude\": 49.5027812,\n  \"longitude\": 11.2728413,\n  \"total_area_sqm\": 30000,\n  \"capacity_mw\": 78.0,\n  \"capacity_w\": 78000000.0,\n  \"industrial_area_name\": \"Kläranlage Lauf\",\n  \"has_plots_for_sale\": false,\n  \"plot_sizes_sqm\": [30000],\n  \"land_cost_eur\": 3300000.0,\n  \"infrastructure_cost_eur\": 239100000.0,\n  \"grid_connection_cost_eur\": 2400000.0,\n  \"power_cost_annual_eur\": 17229000.0,\n  \"cooling_cost_annual_eur\": 1022450.0,\n  \"total_capital_eur\": 245?140000.0,\n  \"total_annual_opex_eur\": 18251450.0\n}",
+    "industrial_area_name": "Kläranlage Lauf"
+  },
+  {
+    "latitude": 48.620288,
+    "longitude": 9.8332955,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "WMF",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 16500000.0,
+    "infrastructure_cost_eur": 915000000.0,
+    "grid_connection_cost_eur": 0.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 2061840.0,
+    "total_capital_eur": 930500000.0,
+    "total_annual_opex_eur": 2061840.0
+  },
+  {
+    "latitude": 53.5494819,
+    "longitude": 13.3700101,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Sponholz",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 3600000.0,
+    "infrastructure_cost_eur": 972000000.0,
+    "grid_connection_cost_eur": 5200000.0,
+    "power_cost_annual_eur": 262379520.0,
+    "cooling_cost_annual_eur": 121680000.0,
+    "total_capital_eur": 982400000.0,
+    "total_annual_opex_eur": 384059520.0
+  },
+  {
+    "latitude": 49.2647321,
+    "longitude": 10.6185333,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000.0,
+      20000.0,
+      30000.0
+    ],
+    "land_cost_eur": 12000000.0,
+    "infrastructure_cost_eur": 363000000.0,
+    "grid_connection_cost_eur": 1900000.0,
+    "power_cost_annual_eur": 18000000.0,
+    "cooling_cost_annual_eur": 197730000.0,
+    "total_capital_eur": 385900000.0,
+    "total_annual_opex_eur": 215730000.0
+  },
+  {
+    "latitude": 51.3708398,
+    "longitude": 6.4408947,
+    "total_area_sqm": 25000.0,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000.0
+    ],
+    "land_cost_eur": 2125000.0,
+    "infrastructure_cost_eur": 343000000.0,
+    "grid_connection_cost_eur": 7900000.0,
+    "power_cost_annual_eur": 407121000000.0,
+    "cooling_cost_annual_eur": 494325000.0,
+    "total_capital_eur": 352125000.0,
+    "total_annual_opex_eur": 407615325000.0
+  },
+  {
+    "latitude": 49.3876299,
+    "longitude": 14.3596442,
+    "total_area_sqm": 30000.0,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 1050000.0,
+    "infrastructure_cost_eur": 321900000.0,
+    "grid_connection_cost_eur": 0.0,
+    "power_cost_annual_eur": 52980000.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 322950000.0,
+    "total_annual_opex_eur": 52980000.0
+  }
+]

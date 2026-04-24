@@ -1,0 +1,201 @@
+[
+  {
+    "latitude": 53.3441183,
+    "longitude": 7.210381,
+    "total_area_sqm": 25000,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000,
+    "industrial_area_name": "Hafen Ost",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      25000
+    ],
+    "land_cost_eur": 75000000.0,
+    "infrastructure_cost_eur": 315000000.0,
+    "grid_connection_cost_eur": 2500000.0,
+    "power_cost_annual_eur": 351604500.0,
+    "cooling_cost_annual_eur": 123201000.0,
+    "total_capital_eur": 392500000.0,
+    "total_annual_opex_eur": 474805500.0
+  },
+  {
+    "latitude": 51.1097953,
+    "longitude": 9.5527688,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 3000000,
+    "infrastructure_cost_eur": 319800000,
+    "grid_connection_cost_eur": 16800000,
+    "power_cost_annual_eur": 70380000,
+    "cooling_cost_annual_eur": 34070400,
+    "total_capital_eur": 337800000,
+    "total_annual_opex_eur": 104450400
+  },
+  {
+    "latitude": 48.5185972,
+    "longitude": 10.9123317,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "Durach Carl Sauerkraut- & Konservenfabrik & Co. KG",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      15000,
+      25000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 7500000,
+    "infrastructure_cost_eur": 408000000,
+    "grid_connection_cost_eur": 4000000,
+    "power_cost_annual_eur": 38373004800,
+    "cooling_cost_annual_eur": 15818400,
+    "total_capital_eur": 419750000,
+    "total_annual_opex_eur": 38388823200
+  },
+  {
+    "latitude": 53.4119985,
+    "longitude": 14.7120855,
+    "total_area_sqm": 30000.0,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      30000.0,
+      20000.0,
+      40000.0
+    ],
+    "land_cost_eur": 435000.0,
+    "infrastructure_cost_eur": 159600000.0,
+    "grid_connection_cost_eur": 12300000.0,
+    "power_cost_annual_eur": 64178400.0,
+    "cooling_cost_annual_eur": 1054560.0,
+    "total_capital_eur": 172950000.0,
+    "total_annual_opex_eur": 65232960.0
+  },
+  {
+    "latitude": 51.414614,
+    "longitude": 7.5349344,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000,
+    "industrial_area_name": "Wasserwerk Westhofen",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      20000
+    ],
+    "land_cost_eur": 2000000,
+    "infrastructure_cost_eur": 176400000,
+    "grid_connection_cost_eur": 2400000,
+    "power_cost_annual_eur": 102492000,
+    "cooling_cost_annual_eur": 39487.5,
+    "total_capital_eur": 180400000,
+    "total_annual_opex_eur": 102531487.5
+  },
+  {
+    "latitude": 50.1612097,
+    "longitude": 14.1157993,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "NKT - Sklad",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000.0
+    ],
+    "land_cost_eur": 5400000.0,
+    "infrastructure_cost_eur": 297000000.0,
+    "grid_connection_cost_eur": 22300000.0,
+    "power_cost_annual_eur": 848400.0,
+    "cooling_cost_annual_eur": 23727600.0,
+    "total_capital_eur": 323300000.0,
+    "total_annual_opex_eur": 24576000.0
+  },
+  {
+    "latitude": 53.3906945,
+    "longitude": 13.2215245,
+    "total_area_sqm": 20000,
+    "capacity_mw": 52.0,
+    "capacity_w": 52000000.0,
+    "industrial_area_name": "Sägewerk Rödlin",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      20000
+    ],
+    "land_cost_eur": 1800000.0,
+    "infrastructure_cost_eur": 115000000.0,
+    "grid_connection_cost_eur": 11900000.0,
+    "power_cost_annual_eur": 0.0,
+    "cooling_cost_annual_eur": 22308000.0,
+    "total_capital_eur": 116800000.0,
+    "total_annual_opex_eur": 22308000.0
+  },
+  {
+    "latitude": 47.5722396,
+    "longitude": 10.5642502,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "DMG Mori Standort Pfronten",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      10000.0,
+      20000.0,
+      30000.0
+    ],
+    "land_cost_eur": 4650000.0,
+    "infrastructure_cost_eur": 140100000.0,
+    "grid_connection_cost_eur": 16400000.0,
+    "power_cost_annual_eur": 1510048800.0,
+    "cooling_cost_annual_eur": 1419600000.0,
+    "total_capital_eur": 169910000.0,
+    "total_annual_opex_eur": 2929648800.0
+  },
+  {
+    "latitude": 53.3351512,
+    "longitude": 7.20639,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Südkai",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000,
+      20000,
+      40000
+    ],
+    "land_cost_eur": 8850000.0,
+    "infrastructure_cost_eur": 376800000.0,
+    "grid_connection_cost_eur": 30000000.0,
+    "power_cost_annual_eur": 3775122000.0,
+    "cooling_cost_annual_eur": 5573700.0,
+    "total_capital_eur": 439050000.0,
+    "total_annual_opex_eur": 3780695700.0
+  },
+  {
+    "latitude": 51.1063655,
+    "longitude": 9.5549933,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000,
+    "industrial_area_name": "B. Braun Melsungen AG",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      20000,
+      30000,
+      40000
+    ],
+    "land_cost_eur": 1200000.0,
+    "infrastructure_cost_eur": 720000000.0,
+    "grid_connection_cost_eur": 17200000.0,
+    "power_cost_annual_eur": 16187000.0,
+    "cooling_cost_annual_eur": 21902400.0,
+    "total_capital_eur": 737200000.0,
+    "total_annual_opex_eur": 38089400.0
+  }
+]

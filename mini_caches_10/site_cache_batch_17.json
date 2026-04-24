@@ -1,0 +1,170 @@
+[
+  {
+    "latitude": 48.0805791,
+    "longitude": 13.4873879,
+    "total_area_sqm": 500000,
+    "capacity_mw": 1300.0,
+    "capacity_w": 1300000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      50000.0,
+      100000.0,
+      150000.0,
+      200000.0
+    ],
+    "land_cost_eur": 40000000.0,
+    "infrastructure_cost_eur": 2350000000.0,
+    "power_cost_annual_eur": 2733120000.0,
+    "cooling_cost_annual_eur": 120835.0,
+    "total_capital_eur": 2390000000.0,
+    "total_annual_opex_eur": 2733240835.0
+  },
+  {
+    "latitude": 48.1657725,
+    "longitude": 11.4248929,
+    "total_area_sqm": 50000,
+    "capacity_mw": 130.0,
+    "capacity_w": 130000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      20000,
+      30000
+    ],
+    "land_cost_eur": 17500000,
+    "infrastructure_cost_eur": 734000000,
+    "power_cost_annual_eur": 204984000,
+    "cooling_cost_annual_eur": 6760000,
+    "total_capital_eur": 751500000,
+    "total_annual_opex_eur": 211744000
+  },
+  {
+    "latitude": 49.903941,
+    "longitude": 10.8950747,
+    "total_area_sqm": 120000,
+    "capacity_mw": 312,
+    "capacity_w": 312000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 34800000,
+    "infrastructure_cost_eur": 924000000,
+    "power_cost_annual_eur": 5466240000,
+    "cooling_cost_annual_eur": 184548000,
+    "total_capital_eur": 958800000,
+    "total_annual_opex_eur": 5650788000
+  },
+  {
+    "latitude": 50.0432108,
+    "longitude": 14.2572509,
+    "total_area_sqm": 0.0,
+    "capacity_mw": 0.0,
+    "capacity_w": 0.0,
+    "raw_output": "{\n  \"latitude\": 50.0432108,\n  \"longitude\": 14.2572509,\n  \"total_area_sqm\": 20000,\n  \"capacity_mw\": 52.0,\n  \"capacity_w\": 52000000.0,\n  \"industrial_area_name\": null,\n  \"has_plots_for_sale\": false,\n  \"plot_sizes_sqm\": [20000.0],\n  \"land_cost_eur\": 1800000.0,\n  \"infrastructure_cost_eur\": 193200000.0,\n  \"power_cost_annual_eur\": 437299200.0,\n  \"cooling_cost_annual_eur\": 197730.0,\n  \"total_capital_eur\": 194,? 193200000.0,\n  \"total_annual_opex_eur\": 437496930.0\n}",
+    "industrial_area_name": "Unknown"
+  },
+  {
+    "latitude": 51.3728565,
+    "longitude": 6.427526,
+    "total_area_sqm": 80000,
+    "capacity_mw": 208.0,
+    "capacity_w": 208000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": true,
+    "plot_sizes_sqm": [
+      1763.0,
+      8800.0
+    ],
+    "land_cost_eur": 6000000.0,
+    "infrastructure_cost_eur": 987200000.0,
+    "power_cost_annual_eur": 1503216000.0,
+    "cooling_cost_annual_eur": 4875000.0,
+    "total_capital_eur": 993200000.0,
+    "total_annual_opex_eur": 1508091000.0
+  },
+  {
+    "latitude": 52.3093916,
+    "longitude": 13.4372186,
+    "total_area_sqm": 30000,
+    "capacity_mw": 78.0,
+    "capacity_w": 78000000.0,
+    "industrial_area_name": "Rolls-Royce Deutschland",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      30000
+    ],
+    "land_cost_eur": 4530000.0,
+    "infrastructure_cost_eur": 383400000.0,
+    "power_cost_annual_eur": 1315104000.0,
+    "cooling_cost_annual_eur": 1391760.0,
+    "total_capital_eur": 388930000.0,
+    "total_annual_opex_eur": 1316495760.0
+  },
+  {
+    "latitude": 48.0801079,
+    "longitude": 13.4857213,
+    "total_area_sqm": 50000,
+    "capacity_mw": 130.0,
+    "capacity_w": 130000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [
+      50000.0
+    ],
+    "land_cost_eur": 10000000.0,
+    "infrastructure_cost_eur": 1250000000.0,
+    "power_cost_annual_eur": 464630.0,
+    "cooling_cost_annual_eur": 15600000.0,
+    "total_capital_eur": 1260000000.0,
+    "total_annual_opex_eur": 16064630.0
+  },
+  {
+    "latitude": 49.1694382,
+    "longitude": 11.6255672,
+    "total_area_sqm": 800000.0,
+    "capacity_mw": 2080.0,
+    "capacity_w": 2080000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 680000000.0,
+    "infrastructure_cost_eur": 3113600000.0,
+    "power_cost_annual_eur": 2623795200.0,
+    "cooling_cost_annual_eur": 7800000.0,
+    "total_capital_eur": 3793600000.0,
+    "total_annual_opex_eur": 2631595200.0
+  },
+  {
+    "latitude": 49.3935193,
+    "longitude": 11.0493291,
+    "total_area_sqm": 25000.0,
+    "capacity_mw": 65.0,
+    "capacity_w": 65000000.0,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 10500000.0,
+    "infrastructure_cost_eur": 435000000.0,
+    "power_cost_annual_eur": 370110000.0,
+    "cooling_cost_annual_eur": 0.0,
+    "total_capital_eur": 445500000.0,
+    "total_annual_opex_eur": 370110000.0
+  },
+  {
+    "latitude": 51.3723886,
+    "longitude": 6.4293407,
+    "total_area_sqm": 60000,
+    "capacity_mw": 156.0,
+    "capacity_w": 156000000,
+    "industrial_area_name": "Unknown",
+    "has_plots_for_sale": false,
+    "plot_sizes_sqm": [],
+    "land_cost_eur": 18000000.0,
+    "infrastructure_cost_eur": 1074000000.0,
+    "power_cost_annual_eur": 596913408000.0,
+    "cooling_cost_annual_eur": 20077200000.0,
+    "total_capital_eur": 1092000000.0,
+    "total_annual_opex_eur": 616990608000.0
+  }
+]

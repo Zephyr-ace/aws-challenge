@@ -105,7 +105,10 @@ class OverpassClient:
         return elements
 
     def _execute_query_remote(self, query: str) -> list[dict]:
-        """Send query to Overpass servers, trying multiple endpoints."""
+        """Send query to Overpass servers, trying multiple endpoints.
+
+        Uses a fresh session per call for thread safety.
+        """
         endpoints = [self.url] + [e for e in OVERPASS_ENDPOINTS if e != self.url]
         last_exc: Exception | None = None
 
@@ -113,9 +116,13 @@ class OverpassClient:
             logger.info("Overpass request: %s", endpoint)
             logger.debug("Overpass query:\n%s", query)
             try:
-                response = self._session.post(
+                response = requests.post(
                     endpoint,
                     data={"data": query},
+                    headers={
+                        "User-Agent": "DataCenterSiteFinder/1.0",
+                        "Accept": "application/json",
+                    },
                     timeout=200,
                 )
             except requests.exceptions.Timeout as exc:
@@ -185,46 +192,46 @@ class OverpassClient:
         cols: int = 3,
         progress_cb: Callable[[int], None] | None = None,
     ) -> list[dict]:
-        """Run a query across bbox chunks, dedup by element id, and merge.
+        """Run a query across bbox chunks in parallel, dedup, and merge.
 
-        Args:
-            query_builder: Callable that takes a bbox string
-                ``"(south,west,north,east)"`` and returns a full
-                Overpass QL query.
-            label: Human-readable label for logging.
-            rows: Number of latitude divisions.
-            cols: Number of longitude divisions.
-            progress_cb: Optional callback invoked after each chunk
-                completes, with the number of new elements as argument.
-
-        Returns:
-            Deduplicated list of elements from all chunks.
+        Chunks are executed concurrently (up to 3 workers) to speed up
+        the initial fetch.  Each chunk is individually cached so that
+        subsequent runs skip already-fetched tiles.
         """
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        import threading
+
         boxes = self._make_bbox_grid(rows, cols)
+        lock = threading.Lock()
         seen_ids: set[int] = set()
         all_elements: list[dict] = []
 
-        for i, (s, w, n, e) in enumerate(boxes):
+        def _fetch_chunk(idx: int, bbox_tuple: tuple[float, float, float, float]) -> list[dict]:
+            s, w, n, e = bbox_tuple
             bbox = f"({s},{w},{n},{e})"
             query = query_builder(bbox)
-            logger.info("%s chunk %d/%d  bbox=%s", label, i + 1, len(boxes), bbox)
-
+            logger.info("%s chunk %d/%d  bbox=%s", label, idx + 1, len(boxes), bbox)
             try:
-                elements = self._execute_query(query)
+                return self._execute_query(query)
             except Exception:
-                logger.warning("%s chunk %d failed, skipping", label, i + 1)
-                elements = []
+                logger.warning("%s chunk %d failed, skipping", label, idx + 1)
+                return []
 
-            new = 0
-            for el in elements:
-                eid = el.get("id")
-                if eid and eid not in seen_ids:
-                    seen_ids.add(eid)
-                    all_elements.append(el)
-                    new += 1
-
-            if progress_cb:
-                progress_cb(1)
+        with ThreadPoolExecutor(max_workers=3) as pool:
+            futs = {
+                pool.submit(_fetch_chunk, i, box): i
+                for i, box in enumerate(boxes)
+            }
+            for fut in as_completed(futs):
+                elements = fut.result()
+                with lock:
+                    for el in elements:
+                        eid = el.get("id")
+                        if eid and eid not in seen_ids:
+                            seen_ids.add(eid)
+                            all_elements.append(el)
+                if progress_cb:
+                    progress_cb(1)
 
         logger.info("%s: %d total elements from %d chunks", label, len(all_elements), len(boxes))
         return all_elements
@@ -245,7 +252,7 @@ class OverpassClient:
                 f"  way[\"landuse\"=\"industrial\"]{bbox};\n"
                 f"  relation[\"landuse\"=\"industrial\"]{bbox};\n"
                 f");\n"
-                f"out center tags;"
+                f"out bb center tags;"
             )
         return self._chunked_query(build, "Industrial areas", progress_cb=progress_cb)
 

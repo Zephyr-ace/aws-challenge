@@ -5,15 +5,6 @@ from typing import NotRequired, TypedDict
 
 
 @dataclass
-class LLMConfig:
-    """Configuration for the LLM (OpenAI-compatible API)."""
-
-    base_url: str = "https://api.openai.com/v1"
-    api_key: str = ""
-    model: str = "gpt-4o-mini"
-
-
-@dataclass
 class FilterConfig:
     """Configuration for proximity filter criteria."""
 
@@ -30,7 +21,6 @@ class PipelineConfig:
     """Configuration for pipeline execution behaviour."""
 
     max_locations: int = 100
-    llm_workers: int = 4
 
 
 @dataclass
@@ -38,7 +28,6 @@ class AppConfig:
     """Top-level application configuration."""
 
     filter: FilterConfig = field(default_factory=FilterConfig)
-    llm: LLMConfig = field(default_factory=LLMConfig)
     pipeline: PipelineConfig = field(default_factory=PipelineConfig)
 
 
@@ -61,10 +50,6 @@ class AreaResult(TypedDict):
     longitude: float
     area_sqm: float
     industrial_area_name: str | None
-    has_plots_for_sale: bool
-    plot_sizes_sqm: list[float]
-    research_confidence: float
-    research_sources: list[str]
     # Optional fields (only present when corresponding criteria are active)
     distance_power_line_km: NotRequired[float]
     water_source_name: NotRequired[str]

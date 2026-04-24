@@ -19,8 +19,10 @@ class FilterConfig:
 
     proximity_power_line_enabled: bool = False
     proximity_water_source_enabled: bool = False
+    proximity_substation_enabled: bool = False
     max_distance_power_line_km: float = 20.0
     max_distance_water_source_km: float = 1.0
+    max_distance_substation_km: float = 30.0
 
 
 @dataclass
@@ -58,3 +60,7 @@ class AreaResult(TypedDict):
     distance_power_line_km: NotRequired[float]
     water_source_name: NotRequired[str]
     distance_water_source_km: NotRequired[float]
+    nearest_substation_name: NotRequired[str | None]
+    nearest_substation_voltage: NotRequired[str | None]
+    nearest_substation_operator: NotRequired[str | None]
+    distance_substation_km: NotRequired[float]

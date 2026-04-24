@@ -2,7 +2,7 @@
 
 import logging
 
-from find_areas.models import AreaResult, FilterConfig, WebResearchResult
+from area_fetching.models import AreaResult, FilterConfig, WebResearchResult
 
 logger = logging.getLogger("find_areas")
 
@@ -84,6 +84,14 @@ class MetadataEnricher:
                 result["water_source_name"] = area.get("_water_source_name")
                 result["distance_water_source_km"] = area.get(
                     "_distance_water_source_km", 0.0
+                )
+
+            if config.proximity_substation_enabled:
+                result["nearest_substation_name"] = area.get("_substation_name")
+                result["nearest_substation_voltage"] = area.get("_substation_voltage")
+                result["nearest_substation_operator"] = area.get("_substation_operator")
+                result["distance_substation_km"] = area.get(
+                    "_distance_substation_km", 0.0
                 )
 
             results.append(result)

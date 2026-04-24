@@ -6,8 +6,8 @@ from math import cos, radians
 import numpy as np
 from scipy.spatial import cKDTree
 
-from find_areas.distance import haversine, point_to_segment_distance_km
-from find_areas.models import FilterConfig
+from area_fetching.distance import haversine, point_to_segment_distance_km
+from area_fetching.models import FilterConfig
 
 logger = logging.getLogger("find_areas")
 
@@ -32,6 +32,7 @@ class FilterEngine:
         industrial_areas: list[dict],
         power_lines: list[dict] | None,
         water_sources: list[dict] | None,
+        substations: list[dict] | None = None,
     ) -> list[dict]:
         """Filter *industrial_areas* according to the active criteria.
 
@@ -51,6 +52,9 @@ class FilterEngine:
 
         if self.config.proximity_water_source_enabled and water_sources is not None:
             result = self._filter_by_water_sources(result, water_sources)
+
+        if self.config.proximity_substation_enabled and substations is not None:
+            result = self._filter_by_substations(result, substations)
 
         return result
 
@@ -250,3 +254,77 @@ class FilterEngine:
                 nearest_name = source.get("tags", {}).get("name")
 
         return min_dist, nearest_name
+
+    # ------------------------------------------------------------------
+    # Criterion D – substations
+    # ------------------------------------------------------------------
+
+    def _filter_by_substations(
+        self,
+        areas: list[dict],
+        substations: list[dict],
+    ) -> list[dict]:
+        threshold = self.config.max_distance_substation_km
+        kept: list[dict] = []
+
+        for area in areas:
+            lat = area["center"]["lat"]
+            lon = area["center"]["lon"]
+            dist, name, voltage, operator = self._find_nearest_substation(
+                lat, lon, substations,
+            )
+            logger.debug(
+                "Area (%.4f, %.4f) -> nearest substation: %.4f km (%s)",
+                lat, lon, dist, name,
+            )
+            if dist < threshold:
+                area["_distance_substation_km"] = dist
+                area["_substation_name"] = name
+                area["_substation_voltage"] = voltage
+                area["_substation_operator"] = operator
+                kept.append(area)
+
+        logger.info(
+            "Substation filter: %d of %d areas within threshold",
+            len(kept), len(areas),
+        )
+        return kept
+
+    @staticmethod
+    def _find_nearest_substation(
+        area_lat: float,
+        area_lon: float,
+        substations: list[dict],
+    ) -> tuple[float, str | None, str | None, str | None]:
+        """Find the nearest transmission substation using Haversine distance.
+
+        Returns:
+            ``(distance_km, name, voltage, operator)`` — any field may
+            be ``None`` if the OSM element lacks the corresponding tag.
+        """
+        min_dist = float("inf")
+        nearest_name: str | None = None
+        nearest_voltage: str | None = None
+        nearest_operator: str | None = None
+
+        for sub in substations:
+            # Substations may be nodes (lat/lon directly) or ways/relations (center)
+            center = sub.get("center")
+            if center is None:
+                # Node elements have lat/lon at top level
+                if "lat" in sub and "lon" in sub:
+                    s_lat, s_lon = sub["lat"], sub["lon"]
+                else:
+                    continue
+            else:
+                s_lat, s_lon = center["lat"], center["lon"]
+
+            dist = haversine(area_lat, area_lon, s_lat, s_lon)
+            if dist < min_dist:
+                min_dist = dist
+                tags = sub.get("tags", {})
+                nearest_name = tags.get("name")
+                nearest_voltage = tags.get("voltage")
+                nearest_operator = tags.get("operator")
+
+        return min_dist, nearest_name, nearest_voltage, nearest_operator

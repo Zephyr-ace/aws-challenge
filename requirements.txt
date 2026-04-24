@@ -1,0 +1,6 @@
+openai-agents>=0.1.0
+requests>=2.31
+openai>=1.0
+PyYAML>=6.0
+numpy>=1.24
+scipy>=1.11

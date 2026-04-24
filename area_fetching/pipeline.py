@@ -4,13 +4,13 @@ from __future__ import annotations
 
 import logging
 
-from find_areas.config import load_config
-from find_areas.enricher import MetadataEnricher
-from find_areas.filter_engine import FilterEngine
-from find_areas.llm_helper import LLMHelper
-from find_areas.models import AreaResult
-from find_areas.overpass import OverpassClient
-from find_areas.web_research_agent import WebResearchAgent
+from area_fetching.config import load_config
+from area_fetching.enricher import MetadataEnricher
+from area_fetching.filter_engine import FilterEngine
+from area_fetching.llm_helper import LLMHelper
+from area_fetching.models import AreaResult
+from area_fetching.overpass import OverpassClient
+from area_fetching.web_research_agent import WebResearchAgent
 
 logger = logging.getLogger("find_areas")
 
@@ -60,6 +60,7 @@ def find_areas(config_path: str) -> list[AreaResult]:
     # 4. Optionally query infrastructure data
     power_lines: list[dict] | None = None
     water_sources: list[dict] | None = None
+    substations: list[dict] | None = None
 
     if config.filter.proximity_power_line_enabled:
         logger.info("Querying power lines...")
@@ -69,9 +70,14 @@ def find_areas(config_path: str) -> list[AreaResult]:
         logger.info("Querying water sources...")
         water_sources = client.query_water_sources()
 
+    if config.filter.proximity_substation_enabled:
+        logger.info("Querying transmission substations...")
+        substations = client.query_substations()
+        logger.info("Found %d transmission substations", len(substations))
+
     # 5. Apply filters
     engine = FilterEngine(config.filter)
-    filtered = engine.apply_filters(industrial_areas, power_lines, water_sources)
+    filtered = engine.apply_filters(industrial_areas, power_lines, water_sources, substations)
 
     # 6. Enrich metadata
     enricher = MetadataEnricher()

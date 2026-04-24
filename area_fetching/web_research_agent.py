@@ -8,8 +8,8 @@ from urllib.parse import quote_plus
 
 import requests
 
-from find_areas.llm_helper import LLMHelper
-from find_areas.models import WebResearchResult
+from area_fetching.llm_helper import LLMHelper
+from area_fetching.models import WebResearchResult
 
 logger = logging.getLogger("find_areas")
 

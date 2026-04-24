@@ -15,4 +15,4 @@ if not logger.handlers:
     _handler.setFormatter(_formatter)
     logger.addHandler(_handler)
 
-from find_areas.pipeline import find_areas  # noqa: E402
+from area_fetching.pipeline import find_areas  # noqa: E402

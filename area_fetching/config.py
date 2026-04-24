@@ -8,8 +8,8 @@ import re
 
 import yaml
 
-from find_areas.exceptions import ConfigError
-from find_areas.models import AppConfig, FilterConfig, LLMConfig
+from area_fetching.exceptions import ConfigError
+from area_fetching.models import AppConfig, FilterConfig, LLMConfig
 
 logger = logging.getLogger("find_areas")
 
@@ -88,6 +88,7 @@ def load_config(config_path: str) -> AppConfig:
     filter_raw = raw.get("filter", {}) or {}
     power_line_raw = filter_raw.get("proximity_power_line", {}) or {}
     water_source_raw = filter_raw.get("proximity_water_source", {}) or {}
+    substation_raw = filter_raw.get("proximity_substation", {}) or {}
 
     filter_config = FilterConfig(
         proximity_power_line_enabled=power_line_raw.get(
@@ -96,11 +97,17 @@ def load_config(config_path: str) -> AppConfig:
         proximity_water_source_enabled=water_source_raw.get(
             "enabled", FilterConfig.proximity_water_source_enabled
         ),
+        proximity_substation_enabled=substation_raw.get(
+            "enabled", FilterConfig.proximity_substation_enabled
+        ),
         max_distance_power_line_km=power_line_raw.get(
             "max_distance_km", FilterConfig.max_distance_power_line_km
         ),
         max_distance_water_source_km=water_source_raw.get(
             "max_distance_km", FilterConfig.max_distance_water_source_km
+        ),
+        max_distance_substation_km=substation_raw.get(
+            "max_distance_km", FilterConfig.max_distance_substation_km
         ),
     )
 
@@ -114,11 +121,14 @@ def load_config(config_path: str) -> AppConfig:
     logger.info("Configuration loaded from %s", config_path)
     logger.info(
         "Filter settings – power_line: enabled=%s (max %.1f km), "
-        "water_source: enabled=%s (max %.1f km)",
+        "water_source: enabled=%s (max %.1f km), "
+        "substation: enabled=%s (max %.1f km)",
         config.filter.proximity_power_line_enabled,
         config.filter.max_distance_power_line_km,
         config.filter.proximity_water_source_enabled,
         config.filter.max_distance_water_source_km,
+        config.filter.proximity_substation_enabled,
+        config.filter.max_distance_substation_km,
     )
     logger.info("LLM settings – base_url=%s, model=%s", config.llm.base_url, config.llm.model)
 
@@ -146,4 +156,8 @@ def _validate_filter(cfg: FilterConfig) -> None:
     if cfg.max_distance_water_source_km <= 0:
         raise ConfigError(
             f"max_distance_water_source_km must be > 0, got {cfg.max_distance_water_source_km}"
+        )
+    if cfg.max_distance_substation_km <= 0:
+        raise ConfigError(
+            f"max_distance_substation_km must be > 0, got {cfg.max_distance_substation_km}"
         )

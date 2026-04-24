@@ -9,8 +9,8 @@ from typing import Any, Callable
 
 import openai
 
-from find_areas.exceptions import LLMError
-from find_areas.models import LLMConfig
+from area_fetching.exceptions import LLMError
+from area_fetching.models import LLMConfig
 
 logger = logging.getLogger("find_areas")
 

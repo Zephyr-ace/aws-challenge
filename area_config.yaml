@@ -1,0 +1,15 @@
+llm:
+  base_url: "https://api.openai.com/v1"
+  api_key: "${OPENAI_API_KEY}"
+  model: "gpt-4o-mini"
+
+filter:
+  proximity_power_line:
+    enabled: false
+    max_distance_km: 20.0
+  proximity_water_source:
+    enabled: false
+    max_distance_km: 1.0
+  proximity_substation:
+    enabled: true
+    max_distance_km: 30.0
